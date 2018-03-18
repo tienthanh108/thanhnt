@@ -1,0 +1,95 @@
+:global {
+  @import 'base';
+  @import '~normalize.css/normalize';
+  // Some best-practice CSS that's useful for most apps
+  // Just remove them if they're not what you want
+  html {
+    box-sizing: border-box;
+  }
+
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-size: 16px;
+    // 1em = 16px
+    @media (max-width: 1024px) {
+      font-size: 18px;
+    }
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4 {
+    font-family: 'Roboto';
+    font-weight: inherit;
+  }
+  h5,
+  h6 {
+    font-weight: inherit;
+  }
+  body.modal-open { position: fixed; width: 100%; }
+  body {
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    input::-webkit-input-placeholder { opacity: 1 !important; }
+    input:-moz-placeholder { opacity: 1 !important; }
+    input::-moz-placeholder { opacity: 1 !important; }
+    input:-ms-input-placeholder { opacity: 1 !important; }
+
+    .pageIntroTitle {
+      margin: 10px 0;
+      text-align: center;
+
+      & > p {
+        font-family: 'Roboto';
+        font-size: 18px;
+        font-weight: bold;
+        color: $matterhorn;
+        text-transform: uppercase;
+      }
+    }
+
+    .pageInroText {
+      margin: 10px 0;
+      text-align: center;
+
+      & > p {
+        font-family: 'Roboto';
+        font-size: 16px;
+        color: $matterhorn;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  *  {
+    // border: solid;
+    // border-color: red;
+    // border-width: 1px;
+    // border-style: dotted;
+  },
+  *:after,
+  *:before {
+    box-sizing: inherit;
+  }
+  .Select--single>.Select-control .Select-value {
+    @media (max-width: 768px) {
+      padding-right: 15px !important;
+    }
+  }
+}

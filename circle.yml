@@ -1,0 +1,16 @@
+machine:
+  node:
+    version: 4.2.2
+  post: 
+     - npm install -g npm@3.x.x
+checkout:
+    post:
+        - npm install
+test:
+    post:
+        - npm run lint
+        - bash <(curl -s https://codecov.io/bash) -t 551576ad-f417-4c58-9d1c-94a5e3b373cd
+
+general:
+  artifacts:
+    - "dist"

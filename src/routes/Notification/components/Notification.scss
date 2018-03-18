@@ -1,0 +1,12 @@
+@import 'styles/variables/sizes';
+@import 'styles/variables/colors';
+.bgDashBoard {
+  background-color: #f5f5f5;
+  background-image: url('assets/on-setting.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  .notifyText {
+    text-align: center;
+    margin-top: 42vh;
+  }
+}

@@ -1,0 +1,33 @@
+.container {
+  width: 98%;
+  margin: auto;
+  .topMenu {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    button {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border: solid 1px #ccc;
+      background-color: transparent;
+      padding: 4px 8px 4px 8px;
+      margin-left: 10px;
+      &:hover {
+        background: url('assets/category.jpg')
+      }
+    }
+  }
+  .contentInside {
+    border: solid 1px #ccc;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    .productDetail {
+      width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      border-left: solid 1px #ccc;
+    }
+  }
+}

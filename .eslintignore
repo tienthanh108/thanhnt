@@ -1,0 +1,12 @@
+blueprints/**/files/**
+coverage/**
+node_modules/**
+dist/**
+server/**
+src/static/material-style/js/**
+*.spec.js
+tests/test-bundler.js
+src/index.html
+src/main.js
+src/utils/jquery.dotdotdot.js
+src/static/tag-man/tag-manager.js

@@ -1,0 +1,23 @@
+.container {
+  width: 29.33%;
+  height: auto;
+  margin: 2%;
+  border: solid 1px #ccc;
+  color: #232e36;
+  cursor: pointer;
+  &:hover {
+    color: #004ea1;
+  }
+  div {
+    width: 100%;
+    text-align: center;
+    background: #e2e2e2;
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 33px;
+  }
+  img {
+    width: 100%;
+  }
+}

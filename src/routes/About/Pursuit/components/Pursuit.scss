@@ -1,0 +1,10 @@
+.container {
+  width: 98%;
+  margin: auto;
+  display: flex;
+  .innerContent {
+    img {
+      float: right;
+    }
+  }
+}

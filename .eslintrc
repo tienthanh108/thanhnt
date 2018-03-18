@@ -1,0 +1,57 @@
+{
+  "parser"  : "babel-eslint",
+  "extends" : [
+    "standard",
+    "standard-react",
+    "airbnb"
+  ],
+  "plugins": [
+    "babel"
+  ],
+  "env"     : {
+    "browser" : true,
+    "jquery" : true
+  },
+  "settings": {
+    "import/resolver": {
+      "meteor": {
+        "paths": [
+          "./src"
+        ],
+        "moduleDirectory": [
+          # "node_modules",
+          # "src"
+        ]
+      }
+    }
+  },
+  "globals" : {
+    "__DEV__"      : false,
+    "__PROD__"     : false,
+    "__DEBUG__"    : false,
+    "__COVERAGE__" : false,
+    "__BASENAME__" : false,
+    "google"       : false,
+  },
+  "rules": {
+    "semi" : [2, "never"],
+    "jsx-quotes": [2, "prefer-single"],
+    "max-len": [2, 120, 2],
+    "generator-star-spacing": 0,
+    "babel/generator-star-spacing": 1,
+    "import/no-named-as-default": 0,
+    "no-param-reassign": 0,
+    "react/forbid-prop-types": 0,
+    "react/require-default-props": 0,
+    "react/no-array-index-key": 0,
+    "react/prop-types": 0,
+    "arrow-body-style": ["error", "as-needed"],
+    "arrow-parens": ["error", "always"],
+    "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-a11y/label-has-for": 0,
+    "react/jsx-first-prop-new-line": 0,
+    "react/no-find-dom-node": 0,
+    "react/no-danger": 0,
+    "linebreak-style" :0,
+  }
+}

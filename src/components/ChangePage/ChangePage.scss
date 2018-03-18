@@ -1,0 +1,47 @@
+.contentBottom {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;
+  .pageNumber {
+    margin-left: 20px;
+    // margin-right: 20px;
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    height: 40px;
+  }
+  .goButton {
+    margin-right: 20px;
+    border-radius: 100px;
+    background-color: #004ea1;
+    height: 30px;
+    color: white;
+    margin-left: 10px;
+  }
+  .pageNumber {
+    input {
+      text-align: right;
+      width: 42px;
+    }
+  }
+  .leftIcon,
+  .rightIcon {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+
+    border-right: 7px solid #004ea1;
+  }
+  .rightIcon {
+    border-right: none;
+    border-left: 7px solid #004ea1;
+  }
+}

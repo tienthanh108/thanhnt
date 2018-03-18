@@ -1,0 +1,24 @@
+.container {
+  width: 20%;
+  min-width: 212px;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  // border-right: solid 1px #ccc;
+  // margin-right: 20px;
+  button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: none;
+    background-color: transparent;
+    padding: 4px 8px 4px 8px;
+    border-bottom: dotted 1px #ccc;
+    color: #666666;
+    &:hover, &.active  {
+      background: url('assets/category.jpg');
+      color: white;
+    }
+  }
+}

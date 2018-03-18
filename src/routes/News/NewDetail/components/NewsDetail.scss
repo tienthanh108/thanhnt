@@ -1,0 +1,20 @@
+.container {
+  width: 98%;
+  margin: auto;
+  .title {
+    line-height: 24px;
+  }
+  p.lines {
+    text-align: center;
+    display: block;
+    float: left;
+    padding: 10px 0px;
+    width: 100%;
+    border-bottom: 1px solid #CCC;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+  }
+  .content {
+    word-wrap: break-word;
+  }
+}

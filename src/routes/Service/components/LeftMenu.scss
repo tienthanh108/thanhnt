@@ -1,0 +1,34 @@
+.container {
+  width: 20%;
+  min-width: 212px;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  background: url(/src/assets/newrightbg.jpg);
+  .title {
+    width: 100%;
+    margin: auto;
+    height: 41px;
+    line-height: 41px;
+    background: linear-gradient(to bottom, #275fff, #1f81ff);
+    padding-left: 10px;
+    span {
+      font-weight: normal;
+      font-size: 14px;
+      color: white;
+    }
+  }
+  ul {
+    list-style: none;
+    display: block;
+    width: 80%;
+    float: right;
+    color: #666666;
+    li {
+      list-style: none;
+      font-size: 14px;
+      line-height: 35px;
+    }
+  }
+}

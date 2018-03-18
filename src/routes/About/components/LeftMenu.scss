@@ -1,0 +1,23 @@
+.container {
+  width: 20%;
+  min-width: 212px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: #bbb;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: bold;
+  margin-right: 20px;
+  button {
+    background-color: transparent;
+    margin-left: 15px;
+    border: none;
+    text-align: left;
+    &:hover {
+      color: #004ea1;
+    }
+  }
+}

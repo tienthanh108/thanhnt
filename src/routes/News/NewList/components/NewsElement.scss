@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  img {
+    width: 20%;
+    margin: 10px;
+    margin-top: 0px;
+    object-fit: contain;
+  }
+  a {
+    cursor: pointer;
+  }
+  .content {
+    width: calc(80% - 10px);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    .header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+  }
+}

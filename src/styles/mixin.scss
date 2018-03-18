@@ -1,0 +1,91 @@
+$fontRobotoRegular: Roboto;
+
+/*  Clear Fix */
+@mixin clearFix() {
+  &:after {
+    display: block;
+    content: "";
+    width: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+/* Flex box */
+@mixin displayFlex() {
+  display: -webkit-flex;
+  display: flex;
+display: -webkit-flex;
+}
+
+/*  Transition */
+@mixin transition($timeTransition: 400ms) {
+  transition: all $timeTransition ease-in-out;
+}
+
+/* hidden text */
+@mixin hiddenText() {
+  font-size: 0;
+  color: transparent;
+}
+
+@mixin linkButton(){
+  display: inline-block;
+  height: 42px;
+  line-height: 42px;
+  background: $bg-btn-green;
+  width: 258px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 100px;
+  text-transform: uppercase;
+  color: $white;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @media (min-width: 768px) {
+    width: 288px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+  }
+}
+
+@mixin center-item(){
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  position: absolute;
+}
+
+@mixin center-x(){
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+}
+
+@mixin center-y(){
+  transform: translateY(-50%);
+  top: 50%;
+  position: absolute;
+}
+
+/*@mixin transformRotate($deg: 0px) {
+  -webkit-transform : rotate($deg);
+  -ms-transform     : rotate($deg);
+  -o-transform      : rotate($deg);
+  transform         : rotate($deg);
+}*/
+
+/*  Scale */
+/*@mixin scaleTransform($scale: 1) {
+  -webkit-transform: scale($scale);
+  -moz-transform: scale($scale);
+  -o-transform: scale($scale);
+  transform: scale($scale);
+}*/
