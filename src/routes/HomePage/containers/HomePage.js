@@ -1,14 +1,13 @@
 import { connect } from 'react-redux'
 import HomePage from '../components/HomePage'
-// import { facebookLogin, googleLogin } from '../modules/HomePage'
+// import { getHomeParams } from '../modules/HomePage'
 
 const mapStateToProps = (state) => ({
-  locale: state.locale,
+  homeParams: state.homeParams,
 })
 
 const mapDispatchToProps = {
-  // facebookLogin,
-  // googleLogin,
+  // getHomeParams,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage)

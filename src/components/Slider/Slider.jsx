@@ -1,11 +1,11 @@
 import React from 'react'
 import Slider from 'react-slick'
-import slider1 from 'assets/slide1.jpg'
-import slider2 from 'assets/slide2.jpg'
-import slider3 from 'assets/slide3.jpg'
+// import slider1 from 'assets/slide1.jpg'
+// import slider2 from 'assets/slide2.jpg'
+// import slider3 from 'assets/slide3.jpg'
 import classes from './Slider.scss'
 
-const MainSlider = () => {
+const MainSlider = (props) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -15,18 +15,19 @@ const MainSlider = () => {
   }
   return (
     <div className={classes.container}>
-      <Slider {...settings}>
-        <div>
-          <img src={slider1} alt='' />
-        </div>
-        <div>
-          <img src={slider2} alt='' />
-        </div>
-        <div>
-          <img src={slider3} alt='' />
-        </div>
+      {
+        props.banners && props.banners.length > 0 &&
 
-      </Slider>
+        <Slider {...settings}>
+          {
+              props.banners.map((item, index) =>
+                <div data-index={index} key={index}>
+                  <img src={item.parValue} alt={item.description} />
+                </div>,
+              )
+            }
+        </Slider>
+    }
     </div>
   )
 }

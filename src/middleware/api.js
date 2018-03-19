@@ -23,6 +23,7 @@ export const urls = {
     getAllProjectGroup: '/projectGroup',
     getLsProjectByGroupId: '/projectGroup/:id',
     getDetailProjectById: '/project/:id',
+    getHomeParams: '/appParams',
   },
 }
 /**
@@ -152,6 +153,10 @@ export function getLsProjectByGroupId(id) {
 
 export function getDetailProjectById(id) {
   const endpoint = getEndpoint('getDetailProjectById').replace(':id', id)
+  return callApi(endpoint, null, 'GET')
+}
+export function getHomeParams() {
+  const endpoint = getEndpoint('getHomeParams')
   return callApi(endpoint, null, 'GET')
 }
 

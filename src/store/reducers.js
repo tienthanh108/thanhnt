@@ -2,11 +2,13 @@ import { combineReducers } from 'redux'
 import { reducer as formReducer } from 'redux-form'
 import { routerReducer as router } from 'react-router-redux'
 import news from '../routes/News/modules/News'
+import home from '../routes/HomePage/modules/HomePage'
 import products from '../routes/Products/modules/Products'
 import project from '../routes/Projects/modules/Projects'
 import locale from './modules/locale'
 import commonData from './modules/commonData'
 import notification from './modules/notification'
+import core from '../layouts/CoreLayout/CoreModules'
 
 export const makeRootReducer = (asyncReducers) => combineReducers({
   // Add sync reducers here
@@ -18,6 +20,8 @@ export const makeRootReducer = (asyncReducers) => combineReducers({
   notification,
   products,
   project,
+  home,
+  core,
   ...asyncReducers,
 })
 

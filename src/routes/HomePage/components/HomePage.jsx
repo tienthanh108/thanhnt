@@ -79,7 +79,8 @@ class HomePage extends React.Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
+    // this.props.getHomeParams()
   }
 
   componentWillUnmount() {
