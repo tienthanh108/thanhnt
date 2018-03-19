@@ -12,7 +12,9 @@ class CoreLayout extends React.Component {
     this.notificationTimeout = undefined
     this.autoDismissMilliSecs = 6000
   }
-
+  componentWillMount() {
+    this.props.getHomeParams()
+  }
   componentWillUnmount() {
     clearTimeout(this.notificationTimeout)
   }
@@ -30,7 +32,7 @@ class CoreLayout extends React.Component {
           <div className={classes.loader}>Loading...</div>
         </div>}
         <HeaderLanding />
-        <Slider />
+        <Slider banners={this.props.banners} />
         <div className={classes.maxWidth}>
           {this.props.children}
         </div>

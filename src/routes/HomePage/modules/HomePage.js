@@ -1,29 +1,31 @@
-export const GOOGLE_LOGIN_INITIATE = 'GOOGLE_LOGIN_INITIATE'
-export const FACEBOOK_LOGIN_INITIATE = 'FACEBOOK_LOGIN_INITIATE'
-
-export function googleLogin() {
-  return (dispatch) => {
-    dispatch({
-      type: GOOGLE_LOGIN_INITIATE,
-    })
-    window.location.assign(`${'https://accounts.google.com/o/oauth2/auth?' +
-      'redirect_uri='}${window.location.origin}/google&` +
-      'response_type=token&' +
-      `client_id=${process.env.GOOGLE_ID}&` +
-      'scope=https://www.googleapis.com/auth/userinfo.email&' +
-      'access_type=online&' +
-      'approval_prompt=auto')
-  }
-}
-
-export function facebookLogin() {
-  return (dispatch) => {
-    dispatch({
-      type: FACEBOOK_LOGIN_INITIATE,
-    })
-    window.location.assign(`${'https://graph.facebook.com/oauth/authorize?' +
-      `client_id=${process.env.FACEBOOK_ID}&` +
-      'redirect_uri='}${window.location.origin}/facebook&` +
-      'response_type=token&scope=email,public_profile')
-  }
-}
+// import * as API from 'middleware/api'
+//
+// export const GET_PARAMS_HOME = 'GET_PARAMS_HOME'
+//
+// export function getHomeParams() {
+//   return (dispatch) => {
+//     API.getHomeParams().then((response) => {
+//       const homeParams = response.body
+//       dispatch({
+//         type: GET_PARAMS_HOME,
+//         payload: {
+//           homeParams,
+//         },
+//       })
+//     })
+//   }
+// }
+//
+//
+// const ACTION_HANDLERS = {
+//   [GET_PARAMS_HOME]: (state, action) => ({ ...state, ...action.payload }),
+// }
+//
+// const initialState = {
+//
+// }
+//
+// export default function homeReducer(state = initialState, action) {
+//   const handler = ACTION_HANDLERS[action.type]
+//   return handler ? handler(state, action) : state
+// }
