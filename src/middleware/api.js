@@ -23,7 +23,11 @@ export const urls = {
     getAllProjectGroup: '/projectGroup',
     getLsProjectByGroupId: '/projectGroup/:id',
     getDetailProjectById: '/project/:id',
-    getHomeParams: '/appParams',
+    getBanner: '/initData/bannerImage',
+    getInitNews: '/initData/news',
+    getAbout: '/initData/aboutUs',
+    getInitProducts: '/initData/product',
+    getInitProjects: '/initData/project',
   },
 }
 /**
@@ -155,8 +159,24 @@ export function getDetailProjectById(id) {
   const endpoint = getEndpoint('getDetailProjectById').replace(':id', id)
   return callApi(endpoint, null, 'GET')
 }
-export function getHomeParams() {
-  const endpoint = getEndpoint('getHomeParams')
+export function getBanner() {
+  const endpoint = getEndpoint('getBanner')
+  return callApi(endpoint, null, 'GET')
+}
+export function getInitNews() {
+  const endpoint = getEndpoint('getInitNews')
+  return callApi(endpoint, null, 'GET')
+}
+export function getInitProducts() {
+  const endpoint = getEndpoint('getInitProducts')
+  return callApi(endpoint, null, 'GET')
+}
+export function getInitProjects() {
+  const endpoint = getEndpoint('getInitProjects')
+  return callApi(endpoint, null, 'GET')
+}
+export function getAbout() {
+  const endpoint = getEndpoint('getAbout')
   return callApi(endpoint, null, 'GET')
 }
 

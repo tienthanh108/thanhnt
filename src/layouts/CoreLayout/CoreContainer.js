@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { clearNotification } from 'store/modules/notification'
-import { getHomeParams } from './CoreModules'
+import { getBanner, getAbout, getInitNews, getInitProducts, getInitProjects } from './CoreModules'
 import CoreLayout from './CoreLayout'
 
 const mapStateToProps = (state) => ({
@@ -12,7 +12,11 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   clearNotification,
-  getHomeParams,
+  getBanner,
+  getAbout,
+  getInitNews,
+  getInitProducts,
+  getInitProjects,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CoreLayout)

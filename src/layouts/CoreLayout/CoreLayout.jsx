@@ -13,7 +13,11 @@ class CoreLayout extends React.Component {
     this.autoDismissMilliSecs = 6000
   }
   componentWillMount() {
-    this.props.getHomeParams()
+    this.props.getBanner()
+    this.props.getAbout()
+    this.props.getInitNews()
+    this.props.getInitProducts()
+    this.props.getInitProjects()
   }
   componentWillUnmount() {
     clearTimeout(this.notificationTimeout)
