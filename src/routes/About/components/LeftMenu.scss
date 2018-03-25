@@ -16,8 +16,12 @@
     margin-left: 15px;
     border: none;
     text-align: left;
-    &:hover {
-      color: #004ea1;
+    //&:hover {
+    //  color: #004ea1;
+    //}
+    &:hover, &.active  {
+      background: url('assets/category.jpg');
+      color: white;
     }
   }
 }

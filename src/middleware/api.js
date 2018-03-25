@@ -24,6 +24,9 @@ export const urls = {
     getLsProjectByGroupId: '/projectGroup/:id',
     getDetailProjectById: '/project/:id',
     getHomeParams: '/appParams',
+    getProfiles: '/profiles',
+    getProfilesDetail: '/profiles/:id',
+    getImageHome: '/appParams/getByParType/IMAGE_HOME',
   },
 }
 /**
@@ -157,6 +160,21 @@ export function getDetailProjectById(id) {
 }
 export function getHomeParams() {
   const endpoint = getEndpoint('getHomeParams')
+  return callApi(endpoint, null, 'GET')
+}
+
+export function getImageHome() {
+  const endpoint = getEndpoint('getImageHome')
+  return callApi(endpoint, null, 'GET')
+}
+
+export function getProfiles() {
+  const endpoint = getEndpoint('getProfiles')
+  return callApi(endpoint, null, 'GET')
+}
+
+export function getProfilesDetail(id) {
+  const endpoint = getEndpoint('getProfilesDetail').replace(':id', id)
   return callApi(endpoint, null, 'GET')
 }
 
