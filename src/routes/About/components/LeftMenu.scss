@@ -19,12 +19,16 @@
   }
   button {
     background-color: transparent;
-    margin-left: 15px;
+    padding-left: 15px;
     border: none;
     text-align: left;
+    //&:hover {
+    //  color: #004ea1;
+    //}
     color: #666666;
-    &:hover {
-      color: #2857a3;
+    &:hover, &.active  {
+      background: url('assets/category.jpg');
+      color: white;
     }
   }
 }

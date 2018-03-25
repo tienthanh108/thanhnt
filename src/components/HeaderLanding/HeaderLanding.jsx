@@ -21,10 +21,10 @@ class Header extends React.Component {
       <div id='headerLandingPage' className='headerLandingPage'>
         <div className='containerWarper'>
           <button type='button' className='menuMobileButton' onClick={() => this.openMenu(true)} />
-          <img className='logo' onClick={() => this.navigatTo('/')} src={logo} alt='Logo DMX' />
+          <img className='logo' onClick={() => navigateTo('/')} src={logo} alt='Logo DMX' />
           <ul className='menuListContainer'>
             <li className={classNames('menuItem', this.props.about ? 'activeTab' : '')}
-              onClick={() => navigateTo('/about/introduction')}
+              onClick={() => navigateTo('/about')}
             >
               <p>Về chúng tôi</p>
               <p>ABOUT US</p>
