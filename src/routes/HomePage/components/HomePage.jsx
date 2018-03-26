@@ -4,6 +4,7 @@ import React from 'react'
 import Slider from 'react-slick'
 import classes from './HomePage.scss'
 import SlideDiv from './SlideDiv'
+import { navigateTo } from '../../../utils/routing'
 
 
 const settings = {
@@ -29,6 +30,27 @@ class HomePage extends React.Component {
   componentWillUnmount() {
   }
 
+  navigateProduct = (id) => {
+    if (id) {
+      sessionStorage.setItem('productId', id)
+      navigateTo('/products')
+    }
+  }
+
+  navigateNews = (id) => {
+    if (id) {
+      sessionStorage.setItem('newId', id)
+      navigateTo('/news/detail')
+    }
+  }
+
+  navigateProject = (id) => {
+    if (id) {
+      sessionStorage.setItem('projectId', id)
+      navigateTo('/projects')
+    }
+  }
+
 
   render() {
     const { aboutImagePath, newsImagePath, news, products, projects, about } = this.props
@@ -38,7 +60,7 @@ class HomePage extends React.Component {
           <div className={classes.middleContent}>
             <div className={classes.aboutUs}>
               <button className={classes.titleButton}>About Us</button>
-              <img src={aboutImagePath} alt='' />
+              <img src={aboutImagePath} alt='' onClick={() => navigateTo('/about')} />
               { about &&
                 <span> {about.content}</span>
                }
@@ -49,7 +71,7 @@ class HomePage extends React.Component {
               <div className={classes.newsContent}>
                 {
                   news && news.map((newsElement) =>
-                    <li>
+                    <li onClick={() => this.navigateNews(newsElement.id)}>
                       {newsElement.title}
                     </li>,
                   )
@@ -62,7 +84,7 @@ class HomePage extends React.Component {
                 {
                     products && products.map((product) =>
                       <div>
-                        <img src={product.imagePath} alt='' />
+                        <img src={product.imagePath} alt='' onClick={() => this.navigateProduct(product.id)} />
                       </div>,
                     )
                 }
@@ -74,7 +96,7 @@ class HomePage extends React.Component {
             {
               projects &&
               <Slider {...settings}>
-                <SlideDiv elements={projects} />
+                <SlideDiv elements={projects} navigateProject={this.navigateProject} />
               </Slider>
             }
           </div>

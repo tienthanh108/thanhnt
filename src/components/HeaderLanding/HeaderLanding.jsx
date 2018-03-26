@@ -16,45 +16,72 @@ class Header extends React.Component {
     }
   }
 
+  navigateMenu = (type) => {
+    sessionStorage.clear()
+    switch (type) {
+      case 'about':
+        navigateTo('/about')
+        break
+      case 'news':
+        navigateTo('/news/list')
+        break
+      case 'projects':
+        navigateTo('/projects')
+        break
+      case 'service':
+        navigateTo('/service')
+        break
+      case 'contact':
+        navigateTo('/contact')
+        break
+      case 'products':
+        navigateTo('/products')
+        break
+      default:
+        navigateTo('/')
+        break
+    }
+  }
+
   render() {
     return (
       <div id='headerLandingPage' className='headerLandingPage'>
         <div className='containerWarper'>
           <button type='button' className='menuMobileButton' onClick={() => this.openMenu(true)} />
-          <img className='logo' onClick={() => navigateTo('/')} src={logo} alt='Logo DMX' />
+          <img className='logo' onClick={() => this.navigateMenu()} src={logo} alt='Logo DMX' />
           <ul className='menuListContainer'>
             <li className={classNames('menuItem', this.props.about ? 'activeTab' : '')}
-              onClick={() => navigateTo('/about')}
+              onClick={() => this.navigateMenu('about')}
             >
               <p>Về chúng tôi</p>
               <p>ABOUT US</p>
             </li>
             <li className={classNames('menuItem', this.props.product ? 'activeTab' : '')}
-              onClick={() => navigateTo('/products')}
+              onClick={() => this.navigateMenu('products')}
             >
               <p>Sản phẩm</p>
               <p>PRODUCT</p>
             </li>
             <li className={classNames('menuItem', this.props.news ? 'activeTab' : '')}
-              onClick={() => navigateTo('/news/list')}
+              onClick={() => this.navigateMenu('news')}
             >
               <p>Tin tức</p>
               <p>NEWS</p>
             </li>
             <li className={classNames('menuItem', this.props.project ? 'activeTab' : '')}
-              onClick={() => navigateTo('/projects')}
+              onClick={() => this.navigateMenu('projects')}
             >
               <p>Dự án mẫu</p>
               <p>PROJECT</p>
             </li>
             <li className={classNames('menuItem', this.props.service ? 'activeTab' : '')}
-              onClick={() => navigateTo('/service')}
+              onClick={() => this.navigateMenu('service')}
             >
               <p>Dịch vụ</p>
               <p>SERVICE</p>
             </li>
             <li className={classNames('menuItem', this.props.contact ? 'activeTab' : '')}
-              onClick={() => navigateTo('/contact')}
+              onClick={() => this.navigateMenu('contact')}
             >
               <p>Liên hệ</p>
               <p>CONTACT US</p>

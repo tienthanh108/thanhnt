@@ -7,7 +7,7 @@ const SlideDiv = (props) => (
       props.elements.map((element, index) =>
         <div className={classes.slide}>
           <img src={element.imagePath} alt='' id={index} />
-          <a>{element.name}</a>
+          <a onClick={() => props.navigateProject(element.id)}>{element.name}</a>
         </div>,
       )
     }
