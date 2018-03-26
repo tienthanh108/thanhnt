@@ -27,6 +27,10 @@ export const urls = {
     getProfiles: '/profiles',
     getProfilesDetail: '/profiles/:id',
     getImageHome: '/appParams/getByParType/IMAGE_HOME',
+    getInitAboutInHome: '/initData/aboutUs',
+    getInitNewsInHome: '/initData/news',
+    getInitProductInHome: '/products',
+    getInitProjectInHome: '/project',
   },
 }
 /**
@@ -175,6 +179,26 @@ export function getProfiles() {
 
 export function getProfilesDetail(id) {
   const endpoint = getEndpoint('getProfilesDetail').replace(':id', id)
+  return callApi(endpoint, null, 'GET')
+}
+
+export function getInitNewsInHome() {
+  const endpoint = getEndpoint('getInitNewsInHome')
+  return callApi(endpoint, null, 'GET')
+}
+
+export function getInitProductInHome() {
+  const endpoint = getEndpoint('getInitProductInHome')
+  return callApi(endpoint, null, 'GET')
+}
+
+export function getInitProjectInHome() {
+  const endpoint = getEndpoint('getInitProjectInHome')
+  return callApi(endpoint, null, 'GET')
+}
+
+export function getInitAboutInHome() {
+  const endpoint = getEndpoint('getInitAboutInHome')
   return callApi(endpoint, null, 'GET')
 }
 
