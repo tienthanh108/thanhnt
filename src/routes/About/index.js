@@ -1,12 +1,6 @@
-import Pursuit from './Pursuit'
-import Introduction from './Introduction'
-import Honor from './Honor'
+import Introduction from './containers/Introduction'
 
 export default {
   path: 'about',
-  childRoutes: [
-    Pursuit,
-    Introduction,
-    Honor,
-  ],
+  component: Introduction,
 }

@@ -1,13 +1,19 @@
 import React from 'react'
-import { navigateTo } from 'utils/routing'
 import classes from './LeftMenu.scss'
 
-const Footer = () => (
+const LeftMenu = (props) => (
   <div className={classes.container}>
     <h4>COMPANY PROFILE</h4>
-    <button onClick={() => navigateTo('/about/introduction')}> DMX Introduction </button>
-    <button onClick={() => navigateTo('/about/honor')}> DMX Honor </button>
-    <button onClick={() => navigateTo('/about/pursuit')}> DMX Pursuit </button>
+    {
+      props.elements && props.elements.map((element, index) =>
+        <button key={index}
+          onClick={() => props.selectCategory(element.id)}
+          className={element.active ? classes.active : ''}
+        >
+          {element.dmxType}
+        </button>,
+      )
+    }
   </div>
   )
-export default Footer
+export default LeftMenu

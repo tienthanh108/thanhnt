@@ -1,20 +1,52 @@
+// .container {
+//   width: 20%;
+//   min-width: 212px;
+//   height: 100%;
+//   display: flex;
+//   justify-content: flex-start;
+//   flex-direction: column;
+//   // border-right: solid 1px #ccc;
+//   // margin-right: 20px;
+//   button {
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     background-size: cover;
+//     border: none;
+//     background-color: transparent;
+//     padding: 4px 8px 4px 8px;
+//     border-bottom: dotted 1px #ccc;
+//     color: #666666;
+//     &:hover, &.active  {
+//       background: url('assets/category.jpg');
+//       color: white;
+//     }
+//   }
+// }
 .container {
   width: 20%;
   min-width: 212px;
-  height: 100%;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  // border-right: solid 1px #ccc;
-  // margin-right: 20px;
+  background-color: white;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: bold;
+  margin-right: 20px;
+  box-shadow: 2px 2px 2px 2px #666666;
+  h4 {
+    width: 100%;
+    background-color: #2857a3;
+    padding: 10px;
+    padding-left: 20px;
+    margin: 0px;
+  }
   button {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border: none;
     background-color: transparent;
-    padding: 4px 8px 4px 8px;
-    border-bottom: dotted 1px #ccc;
+    padding-left: 25px;
+    border: none;
+    text-align: left;
     color: #666666;
     &:hover, &.active  {
       background: url('assets/category.jpg');

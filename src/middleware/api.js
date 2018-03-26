@@ -23,11 +23,22 @@ export const urls = {
     getAllProjectGroup: '/projectGroup',
     getLsProjectByGroupId: '/projectGroup/:id',
     getDetailProjectById: '/project/:id',
+<<<<<<< HEAD
     getBanner: '/initData/bannerImage',
     getInitNews: '/initData/news',
     getAbout: '/initData/aboutUs',
     getInitProducts: '/initData/product',
     getInitProjects: '/initData/project',
+=======
+    getHomeParams: '/appParams',
+    getProfiles: '/profiles',
+    getProfilesDetail: '/profiles/:id',
+    getImageHome: '/appParams/getByParType/IMAGE_HOME',
+    getInitAboutInHome: '/initData/aboutUs',
+    getInitNewsInHome: '/initData/news',
+    getInitProductInHome: '/products',
+    getInitProjectInHome: '/project',
+>>>>>>> master
   },
 }
 /**
@@ -177,6 +188,41 @@ export function getInitProjects() {
 }
 export function getAbout() {
   const endpoint = getEndpoint('getAbout')
+  return callApi(endpoint, null, 'GET')
+}
+
+export function getImageHome() {
+  const endpoint = getEndpoint('getImageHome')
+  return callApi(endpoint, null, 'GET')
+}
+
+export function getProfiles() {
+  const endpoint = getEndpoint('getProfiles')
+  return callApi(endpoint, null, 'GET')
+}
+
+export function getProfilesDetail(id) {
+  const endpoint = getEndpoint('getProfilesDetail').replace(':id', id)
+  return callApi(endpoint, null, 'GET')
+}
+
+export function getInitNewsInHome() {
+  const endpoint = getEndpoint('getInitNewsInHome')
+  return callApi(endpoint, null, 'GET')
+}
+
+export function getInitProductInHome() {
+  const endpoint = getEndpoint('getInitProductInHome')
+  return callApi(endpoint, null, 'GET')
+}
+
+export function getInitProjectInHome() {
+  const endpoint = getEndpoint('getInitProjectInHome')
+  return callApi(endpoint, null, 'GET')
+}
+
+export function getInitAboutInHome() {
+  const endpoint = getEndpoint('getInitAboutInHome')
   return callApi(endpoint, null, 'GET')
 }
 
