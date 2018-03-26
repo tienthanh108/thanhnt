@@ -24,7 +24,7 @@ const SliderDiv = (props) => {
               props.elements.map((item, index) =>
                 <div data-index={index} key={index}>
                   <img src={item.imagePath} alt={item.description} />
-                  <div className={classes.title}>{item.code}</div>
+                  <div className={classes.title} onClick={() => props.navigateProject(item.id)}>{item.name}</div>
                 </div>,
               )
             }
