@@ -4,7 +4,7 @@ import classes from './HomePage.scss'
 const SlideDiv = (props) => (
   <div>
     {
-      props.elements && props.elements.map((element, index) =>
+      props.elements.map((element, index) =>
         <div className={classes.slide}>
           <img src={element.imagePath} alt='' id={index} />
           <a>{element.name}</a>

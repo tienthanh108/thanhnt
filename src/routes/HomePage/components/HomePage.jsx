@@ -71,9 +71,12 @@ class HomePage extends React.Component {
           </div>
           <div className={classes.slideContent}>
             <button className={classes.titleButton}>Products Center</button>
-            <Slider {...settings}>
-              <SlideDiv elements={projects} />
-            </Slider>
+            {
+              projects &&
+              <Slider {...settings}>
+                <SlideDiv elements={projects} />
+              </Slider>
+            }
           </div>
         </div>
       </div>
