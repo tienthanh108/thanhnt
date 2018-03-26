@@ -1,7 +1,5 @@
 
 import React from 'react'
-// import { navigateTo } from 'utils/routing'
-// import Slider from 'react-slick'
 import classes from './HomePage.scss'
 import SlideDiv from './SlideDiv'
 import { navigateTo } from '../../../utils/routing'
@@ -86,12 +84,6 @@ class HomePage extends React.Component {
           <div className={classes.slideContent}>
             <button className={classes.titleButton}>Products Center</button>
             <SlideDiv elements={projects} navigateProject={this.navigateProject} />
-            { /*
-              projects && projects.length > 0 &&
-              <Slider {...settings}>
-                <SlideDiv elements={projects} />
-              </Slider> */
-            }
           </div>
         </div>
       </div>

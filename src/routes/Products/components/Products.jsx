@@ -14,11 +14,10 @@ class Products extends React.Component {
   }
 
   componentWillMount() {
+    this.props.initProduct()
     const productId = sessionStorage.getItem('productId')
     if (productId) {
       this.props.getDetailProductById(productId)
-    } else {
-      this.props.initProduct()
     }
   }
 
