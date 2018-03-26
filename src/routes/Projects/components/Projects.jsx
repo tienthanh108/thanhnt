@@ -12,7 +12,12 @@ class News extends React.Component {
   }
 
   componentWillMount() {
-    this.props.initProject()
+    const projectId = sessionStorage.getItem('projectId')
+    if (projectId) {
+      this.props.getDetailProjectById(projectId)
+    } else {
+      this.props.initProject()
+    }
   }
 
 

@@ -3,6 +3,7 @@ import classes from './LeftMenu.scss'
 
 const Footer = (props) => (
   <div className={classes.container}>
+    <h4>PRODUCTS</h4>
     {
       props.elements && props.elements.map((element, index) =>
         <button key={index}
