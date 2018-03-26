@@ -17,7 +17,7 @@ class Introduction extends React.Component {
     const { lsProfiles, profile } = this.props
     return (
       <div className={classes.container}>
-        <LeftMenu element={lsProfiles} selectCategory={this.props.getProfilesDetail} />
+        <LeftMenu elements={lsProfiles} selectCategory={this.props.getProfilesDetail} />
         <div className={classes.content}>
           <div className={classes.title}>
             ABOUT

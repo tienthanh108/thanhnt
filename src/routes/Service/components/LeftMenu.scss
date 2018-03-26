@@ -1,34 +1,31 @@
 .container {
   width: 20%;
   min-width: 212px;
-  height: 100%;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  background: url(/src/assets/newrightbg.jpg);
-  .title {
+  background-color: white;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: bold;
+  margin-right: 20px;
+  box-shadow: 2px 2px 2px 2px #666666;
+  h4 {
     width: 100%;
-    margin: auto;
-    height: 41px;
-    line-height: 41px;
-    background: linear-gradient(to bottom, #275fff, #1f81ff);
-    padding-left: 10px;
-    span {
-      font-weight: normal;
-      font-size: 14px;
-      color: white;
-    }
+    background-color: #2857a3;
+    padding: 10px;
+    padding-left: 20px;
+    margin: 0px;
   }
-  ul {
-    list-style: none;
-    display: block;
-    width: 80%;
-    float: right;
+  button {
+    background-color: transparent;
+    padding-left: 25px;
+    border: none;
+    text-align: left;
     color: #666666;
-    li {
-      list-style: none;
-      font-size: 14px;
-      line-height: 35px;
+    &:hover {
+      color: #2857a3;
     }
   }
 }

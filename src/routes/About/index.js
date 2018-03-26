@@ -1,4 +1,4 @@
-import Introduction from './components/Introduction'
+import Introduction from './containers/Introduction'
 
 export default {
   path: 'about',

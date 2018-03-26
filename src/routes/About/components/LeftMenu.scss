@@ -4,21 +4,28 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  background-color: #bbb;
+  background-color: white;
   border-radius: 4px;
-  padding: 10px;
   margin-bottom: 20px;
   color: white;
   font-weight: bold;
   margin-right: 20px;
+  box-shadow: 2px 2px 2px 2px #666666;
+  h4 {
+    width: 100%;
+    background-color: #2857a3;
+    padding: 10px;
+    margin: 0px;
+  }
   button {
     background-color: transparent;
-    margin-left: 15px;
+    padding-left: 15px;
     border: none;
     text-align: left;
     //&:hover {
     //  color: #004ea1;
     //}
+    color: #666666;
     &:hover, &.active  {
       background: url('assets/category.jpg');
       color: white;

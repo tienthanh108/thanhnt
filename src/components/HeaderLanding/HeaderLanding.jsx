@@ -24,7 +24,7 @@ class Header extends React.Component {
           <img className='logo' onClick={() => navigateTo('/')} src={logo} alt='Logo DMX' />
           <ul className='menuListContainer'>
             <li className={classNames('menuItem', this.props.about ? 'activeTab' : '')}
-              onClick={() => navigateTo('/about/introduction')}
+              onClick={() => navigateTo('/about')}
             >
               <p>Về chúng tôi</p>
               <p>ABOUT US</p>
