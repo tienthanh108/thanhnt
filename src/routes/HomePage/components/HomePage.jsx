@@ -1,18 +1,10 @@
 
 import React from 'react'
 // import { navigateTo } from 'utils/routing'
-import Slider from 'react-slick'
+// import Slider from 'react-slick'
 import classes from './HomePage.scss'
 import SlideDiv from './SlideDiv'
 
-
-const settings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 4,
-}
 
 class HomePage extends React.Component {
 
@@ -71,11 +63,12 @@ class HomePage extends React.Component {
           </div>
           <div className={classes.slideContent}>
             <button className={classes.titleButton}>Products Center</button>
-            {
-              projects &&
+            <SlideDiv elements={projects} />
+            { /*
+              projects && projects.length > 0 &&
               <Slider {...settings}>
                 <SlideDiv elements={projects} />
-              </Slider>
+              </Slider> */
             }
           </div>
         </div>
