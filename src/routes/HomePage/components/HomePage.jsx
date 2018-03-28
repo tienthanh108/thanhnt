@@ -22,7 +22,7 @@ class HomePage extends React.Component {
 
   navigateProduct = (id) => {
     if (id) {
-      sessionStorage.setItem('productId', id)
+      sessionStorage.setItem('prodTypeGrpId', id)
       navigateTo('/products')
     }
   }
@@ -43,7 +43,7 @@ class HomePage extends React.Component {
 
 
   render() {
-    const { aboutImagePath, newsImagePath, news, products, projects, about } = this.props
+    const { aboutImagePath, newsImagePath, news, productTypeGroups, projects, about } = this.props
     return (
       <div className={classes.homePage}>
         <div className={classes.content}>
@@ -72,17 +72,17 @@ class HomePage extends React.Component {
               <button className={classes.titleButton}>Products Center</button>
               <div className={classes.productsContent}>
                 {
-                    products && products.map((product) =>
-                      <div>
-                        <img src={product.imagePath} alt='' onClick={() => this.navigateProduct(product.id)} />
-                      </div>,
+                  productTypeGroups && productTypeGroups.map((prodTypeGrp, index) =>
+                    <div key={index}>
+                      <img src={prodTypeGrp.imagePath} alt='' onClick={() => this.navigateProduct(prodTypeGrp.id)} />
+                    </div>,
                     )
                 }
               </div>
             </div>
           </div>
           <div className={classes.slideContent}>
-            <button className={classes.titleButton}>Products Center</button>
+            <button className={classes.titleButton}>Project Center</button>
             <SlideDiv elements={projects} navigateProject={this.navigateProject} />
           </div>
         </div>

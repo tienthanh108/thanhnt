@@ -26,11 +26,10 @@ export const urls = {
     getHomeParams: '/appParams',
     getProfiles: '/profiles',
     getProfilesDetail: '/profiles/:id',
-    getImageHome: '/appParams/getByParType/IMAGE_HOME',
     getInitAboutInHome: '/initData/aboutUs',
     getInitNewsInHome: '/initData/news',
-    getInitProductInHome: '/products',
     getInitProjectInHome: '/project',
+    getServiceByParType: '/appParams/getByParType/:parType',
   },
 }
 /**
@@ -167,8 +166,13 @@ export function getHomeParams() {
   return callApi(endpoint, null, 'GET')
 }
 
+export function getServiceByParType(parType) {
+  const endpoint = getEndpoint('getServiceByParType').replace(':parType', parType)
+  return callApi(endpoint, null, 'GET')
+}
+
 export function getImageHome() {
-  const endpoint = getEndpoint('getImageHome')
+  const endpoint = getServiceByParType('IMAGE_HOME')
   return callApi(endpoint, null, 'GET')
 }
 
@@ -184,11 +188,6 @@ export function getProfilesDetail(id) {
 
 export function getInitNewsInHome() {
   const endpoint = getEndpoint('getInitNewsInHome')
-  return callApi(endpoint, null, 'GET')
-}
-
-export function getInitProductInHome() {
-  const endpoint = getEndpoint('getInitProductInHome')
   return callApi(endpoint, null, 'GET')
 }
 

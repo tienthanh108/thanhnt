@@ -32,7 +32,7 @@ class Header extends React.Component {
         navigateTo('/service')
         break
       case 'contact':
-        navigateTo('/contact')
+        navigateTo('/contactUs')
         break
       case 'products':
         navigateTo('/products')

@@ -24,8 +24,9 @@
     border: none;
     text-align: left;
     color: #666666;
-    &:hover {
-      color: #2857a3;
+    &:hover, &.active  {
+      background: url('assets/category.jpg');
+      color: white;
     }
   }
 }

@@ -3,7 +3,7 @@ import * as API from 'middleware/api'
 export const ABOUT_US_PATH = 'ABOUT_US_PATH'
 export const NEWS_PATH = 'NEWS_PATH'
 export const NEWS_LIST = 'NEWS_LIST'
-export const PRODUCTS_LIST = 'PRODUCTS_LIST'
+export const PRODUCTS_TYPE_GROUP_LIST = 'PRODUCTS_TYPE_GROUP_LIST'
 export const PROJECT_LIST = 'PROJECT_LIST'
 export const ABOUT = 'ABOUT'
 
@@ -41,17 +41,17 @@ export function getInitNewsInHome() {
   }
 }
 
-export function getInitProductInHome() {
+export function getAllProductTypeGroup() {
   return (dispatch) => {
-    API.getInitProductInHome().then((response) => {
-      let products = response.body
-      if (products && products.length > 6) {
-        products = products.slice(0, 5)
+    API.getAllProductTypeGroup().then((response) => {
+      let productTypeGroups = response.body
+      if (productTypeGroups && productTypeGroups.length > 6) {
+        productTypeGroups = productTypeGroups.slice(0, 5)
       }
       dispatch({
-        type: PRODUCTS_LIST,
+        type: PRODUCTS_TYPE_GROUP_LIST,
         payload: {
-          products,
+          productTypeGroups,
         },
       })
     })
@@ -95,7 +95,7 @@ export function initHomePage() {
   return (dispatch) => new Promise((resolve) => {
     dispatch(getImageHome())
     dispatch(getInitNewsInHome())
-    dispatch(getInitProductInHome())
+    dispatch(getAllProductTypeGroup())
     dispatch(getInitProjectInHome())
     dispatch(getInitAboutInHome())
     resolve()
@@ -107,7 +107,7 @@ const ACTION_HANDLERS = {
   [ABOUT_US_PATH]: (state, action) => ({ ...state, ...action.payload }),
   [NEWS_PATH]: (state, action) => ({ ...state, ...action.payload }),
   [NEWS_LIST]: (state, action) => ({ ...state, ...action.payload }),
-  [PRODUCTS_LIST]: (state, action) => ({ ...state, ...action.payload }),
+  [PRODUCTS_TYPE_GROUP_LIST]: (state, action) => ({ ...state, ...action.payload }),
   [PROJECT_LIST]: (state, action) => ({ ...state, ...action.payload }),
   [ABOUT]: (state, action) => ({ ...state, ...action.payload }),
 }

@@ -7,7 +7,7 @@ const mapStateToProps = (store) => ({
   aboutImagePath: store.home.aboutImagePath,
   newsImagePath: store.home.newsImagePath,
   news: store.home.news,
-  products: store.home.products,
+  productTypeGroups: store.home.productTypeGroups,
   projects: store.home.projects,
   about: store.home.about,
 })

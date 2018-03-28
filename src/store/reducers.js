@@ -6,6 +6,7 @@ import home from '../routes/HomePage/modules/HomePage'
 import products from '../routes/Products/modules/Products'
 import project from '../routes/Projects/modules/Projects'
 import about from '../routes/About/modules/About'
+import service from '../routes/Service/modules/Service'
 import locale from './modules/locale'
 import commonData from './modules/commonData'
 import notification from './modules/notification'
@@ -21,6 +22,7 @@ export const makeRootReducer = (asyncReducers) => combineReducers({
   notification,
   products,
   project,
+  service,
   home,
   core,
   about,

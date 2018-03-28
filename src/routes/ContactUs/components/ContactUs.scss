@@ -1,0 +1,32 @@
+.container {
+  width: 98%;
+  margin: auto;
+  .contentInside {
+    // border: solid 1px #ccc;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    .title {
+      background: #7a8893;
+      height: 40px;
+      line-height: 40px;
+      color: #ffffff;
+    }
+    .content {
+      display: flex;
+      flex-direction: row;
+      table {
+        width: 50%;
+      }
+      .mapGoogle {
+        width: 50%;
+      }
+      .subTitle {
+        color:#0e4067;
+        font-size:14px;
+        font-weight:bold;
+      }
+    }
+  }
+
+}
