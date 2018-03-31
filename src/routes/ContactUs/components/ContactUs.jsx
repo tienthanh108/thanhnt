@@ -15,7 +15,9 @@ class ContactUs extends React.Component {
   render() {
     const defaultCenter = { lat: 21.027764, lng: 105.834160 }
     const position = { lat: 21.027764, lng: 105.834160 }
-    const googleMapURL = 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places'
+    // const googleMapURL = 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places'
+    const googleMapURL = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBB5nGkjTb-Uah24vi4Nb2xyFcipIiBX-E' +
+      '&v=3.exp&libraries=geometry,drawing,places'
     return (
       <div className={classes.container}>
         <div className={classes.contentInside}>
