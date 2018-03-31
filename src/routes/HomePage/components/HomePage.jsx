@@ -1,18 +1,9 @@
 
 import React from 'react'
-// import { navigateTo } from 'utils/routing'
-import Slider from 'react-slick'
 import classes from './HomePage.scss'
 import SlideDiv from './SlideDiv'
+import { navigateTo } from '../../../utils/routing'
 
-
-const settings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 4,
-}
 
 class HomePage extends React.Component {
 
@@ -29,16 +20,37 @@ class HomePage extends React.Component {
   componentWillUnmount() {
   }
 
+  navigateProduct = (id) => {
+    if (id) {
+      sessionStorage.setItem('prodTypeGrpId', id)
+      navigateTo('/products')
+    }
+  }
+
+  navigateNews = (id) => {
+    if (id) {
+      sessionStorage.setItem('newId', id)
+      navigateTo('/news/detail')
+    }
+  }
+
+  navigateProject = (id) => {
+    if (id) {
+      sessionStorage.setItem('projectId', id)
+      navigateTo('/projects')
+    }
+  }
+
 
   render() {
-    const { aboutImagePath, newsImagePath, news, products, projects, about } = this.props
+    const { aboutImagePath, newsImagePath, news, productTypeGroups, projects, about } = this.props
     return (
       <div className={classes.homePage}>
         <div className={classes.content}>
           <div className={classes.middleContent}>
             <div className={classes.aboutUs}>
               <button className={classes.titleButton}>About Us</button>
-              <img src={aboutImagePath} alt='' />
+              <img src={aboutImagePath} alt='' onClick={() => navigateTo('/about')} />
               { about &&
                 <span> {about.content}</span>
                }
@@ -49,7 +61,7 @@ class HomePage extends React.Component {
               <div className={classes.newsContent}>
                 {
                   news && news.map((newsElement) =>
-                    <li>
+                    <li onClick={() => this.navigateNews(newsElement.id)}>
                       {newsElement.title}
                     </li>,
                   )
@@ -60,23 +72,18 @@ class HomePage extends React.Component {
               <button className={classes.titleButton}>Products Center</button>
               <div className={classes.productsContent}>
                 {
-                    products && products.map((product) =>
-                      <div>
-                        <img src={product.imagePath} alt='' />
-                      </div>,
+                  productTypeGroups && productTypeGroups.map((prodTypeGrp, index) =>
+                    <div key={index}>
+                      <img src={prodTypeGrp.imagePath} alt='' onClick={() => this.navigateProduct(prodTypeGrp.id)} />
+                    </div>,
                     )
                 }
               </div>
             </div>
           </div>
           <div className={classes.slideContent}>
-            <button className={classes.titleButton}>Products Center</button>
-            {
-              projects &&
-              <Slider {...settings}>
-                <SlideDiv elements={projects} />
-              </Slider>
-            }
+            <button className={classes.titleButton}>Project Center</button>
+            <SlideDiv elements={projects} navigateProject={this.navigateProject} />
           </div>
         </div>
       </div>

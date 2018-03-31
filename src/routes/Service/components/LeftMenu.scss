@@ -10,7 +10,7 @@
   color: white;
   font-weight: bold;
   margin-right: 20px;
-  box-shadow: 2px 2px 2px 2px #666666;
+  box-shadow: 1px 0px 1px 1px #666;
   h4 {
     width: 100%;
     background-color: #2857a3;
@@ -24,8 +24,9 @@
     border: none;
     text-align: left;
     color: #666666;
-    &:hover {
-      color: #2857a3;
+    &:hover, &.active  {
+      background: url('assets/category.jpg');
+      color: white;
     }
   }
 }

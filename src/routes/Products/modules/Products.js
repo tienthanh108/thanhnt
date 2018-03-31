@@ -1,4 +1,5 @@
 import * as API from 'middleware/api'
+import { isEmpty } from '../../../utils/commonLogicApp'
 // import moment from 'moment'
 
 export const GET_LIST_PRODUCT_TYPE_GROUP = 'GET_LIST_PRODUCT_TYPE_GROUP'
@@ -121,7 +122,9 @@ export function initProduct() {
         },
       })
       if (productTypeGroups) {
-        dispatch(getLsProductTypeByGroupId(productTypeGroups[0].id))
+        const prodTypeGrpId = isEmpty(sessionStorage.getItem('prodTypeGrpId')) ?
+          productTypeGroups[0].id : sessionStorage.getItem('prodTypeGrpId')
+        dispatch(getLsProductTypeByGroupId(prodTypeGrpId))
       }
       resolve()
     }).catch((error) => {

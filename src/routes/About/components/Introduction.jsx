@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactHTMLConverter from 'react-html-converter'
 import classes from './Introduction.scss'
 import LeftMenu from './LeftMenu'
 
@@ -15,6 +16,7 @@ class Introduction extends React.Component {
 
   render() {
     const { lsProfiles, profile } = this.props
+    const htmlConvert = new ReactHTMLConverter()
     return (
       <div className={classes.container}>
         <LeftMenu elements={lsProfiles} selectCategory={this.props.getProfilesDetail} />
@@ -24,7 +26,7 @@ class Introduction extends React.Component {
           </div>
           <div className={classes.innerContent}>
             <img src={profile.imagePath} alt='' />
-            {profile.content}
+            {htmlConvert.convert(profile.content)}
           </div>
         </div>
       </div>

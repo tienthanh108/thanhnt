@@ -6,6 +6,7 @@ import Products from './Products'
 import News from './News'
 import Projects from './Projects'
 import Service from './Service'
+import ContactUs from './ContactUs'
 import PageNotFound from './PageNotFound'
 import CoreLayout from '../layouts/CoreLayout'
 
@@ -46,7 +47,6 @@ export function protectRoute(nextState, replace, cb, store) {
     cb()
   }
 }
-
 export const createRoutes = (store) => ({
   // path: '/',
   path: '/',
@@ -65,6 +65,7 @@ export const createRoutes = (store) => ({
     News,
     Projects,
     Service,
+    ContactUs,
     {
       path: '*',
       component: PageNotFound,

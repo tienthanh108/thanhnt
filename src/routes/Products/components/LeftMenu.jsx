@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from './LeftMenu.scss'
 
-const Footer = (props) => (
+const LeftMenu = (props) => (
   <div className={classes.container}>
     <h4>PRODUCTS</h4>
     {
@@ -16,4 +16,4 @@ const Footer = (props) => (
     }
   </div>
   )
-export default Footer
+export default LeftMenu

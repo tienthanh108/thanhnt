@@ -1,9 +1,7 @@
 import React from 'react'
+import ReactHTMLConverter from 'react-html-converter'
 import classes from './Service.scss'
 import LeftMenu from './LeftMenu'
-import ProjectElement from './ServiceElement'
-import ProjectDetail from './ServiceDetail'
-
 
 class Service extends React.Component {
   constructor() {
@@ -13,26 +11,22 @@ class Service extends React.Component {
   }
 
   componentWillMount() {
+    this.props.initService()
   }
 
   render() {
-    const { productTypes, products, product, viewDetail } = this.props
+    const { lsServices, content } = this.props
+    const converter = new ReactHTMLConverter()
     return (
       <div className={classes.container}>
         <div className={classes.contentInside}>
-          <LeftMenu elements={productTypes} selectCategory={this.props.getLsProductByTypeId} />
+          <LeftMenu elements={lsServices} selectCategory={this.props.getServiceByParName} />
           <div className={classes.product}>
             {
-              viewDetail && product &&
-              <ProjectDetail element={product} />
-            }
-
-            {
-              !viewDetail && products && products.map((element, index) =>
-                <ProjectElement key={index} element={element}
-                  selectProduct={this.props.getDetailProductById}
-                />,
-              )
+              content &&
+              <div>
+                {converter.convert(content.parValue)}
+              </div>
             }
           </div>
         </div>

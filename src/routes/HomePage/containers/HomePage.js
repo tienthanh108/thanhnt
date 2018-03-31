@@ -3,21 +3,13 @@ import HomePage from '../components/HomePage'
 import { initHomePage, getInitNewsInHome, getInitProductInHome, getInitAboutInHome, getInitProjectInHome }
   from '../modules/HomePage'
 
-<<<<<<< HEAD
-const mapStateToProps = (state) => ({
-  about: state.core.about,
-  initNews: state.core.initNews,
-  initProjects: state.core.initProjects,
-  initProducts: state.core.initProducts,
-=======
 const mapStateToProps = (store) => ({
   aboutImagePath: store.home.aboutImagePath,
   newsImagePath: store.home.newsImagePath,
   news: store.home.news,
-  products: store.home.products,
+  productTypeGroups: store.home.productTypeGroups,
   projects: store.home.projects,
   about: store.home.about,
->>>>>>> master
 })
 
 const mapDispatchToProps = {

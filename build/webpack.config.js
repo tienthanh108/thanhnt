@@ -2,6 +2,7 @@ import webpack from 'webpack'
 import cssnano from 'cssnano'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
 import _debug from 'debug'
 import config from '../config'
 
@@ -76,11 +77,22 @@ if (__DEV__) {
   webpackConfig.plugins.push(
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
+    new UglifyJsPlugin(),
     // new webpack.optimize.UglifyJsPlugin({
     //   compress: {
-    //     unused: true,
-    //     dead_code: true,
     //     warnings: false,
+    //     screw_ie8: true,
+    //     conditionals: true,
+    //     unused: true,
+    //     comparisons: true,
+    //     sequences: true,
+    //     dead_code: true,
+    //     evaluate: true,
+    //     if_return: true,
+    //     join_vars: true,
+    //   },
+    //   output: {
+    //     comments: false,
     //   },
     // }),
   )
