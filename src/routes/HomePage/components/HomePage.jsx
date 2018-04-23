@@ -60,8 +60,8 @@ class HomePage extends React.Component {
               <img src={newsImagePath} alt='' />
               <div className={classes.newsContent}>
                 {
-                  news && news.map((newsElement) =>
-                    <li onClick={() => this.navigateNews(newsElement.id)}>
+                  news && news.map((newsElement, index) =>
+                    <li key={index} onClick={() => this.navigateNews(newsElement.id)}>
                       {newsElement.title}
                     </li>,
                   )

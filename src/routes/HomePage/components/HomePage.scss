@@ -18,8 +18,14 @@
       padding-top: 10px;
       display: flex;
       justify-content: space-between;
+      @media (max-width: 768px) {
+        flex-wrap: wrap;
+      }
       .aboutUs {
         width: 30%;
+        @media (max-width: 768px) {
+          width: 100%;
+        }
         img {
           width: 100%;
           height: auto;
@@ -28,6 +34,9 @@
       }
       .news {
         width: 38%;
+        @media (max-width: 768px) {
+          width: 100%;
+        }
         img {
           width: 100%;
           height: auto;
@@ -52,6 +61,9 @@
       }
       .products {
         width: 30%;
+        @media (max-width: 768px) {
+          width: 100%;
+        }
         .productsContent {
           display: flex;
           flex-wrap: wrap;

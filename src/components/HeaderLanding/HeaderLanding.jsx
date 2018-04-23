@@ -18,6 +18,7 @@ class Header extends React.Component {
 
   navigateMenu = (type) => {
     sessionStorage.clear()
+    this.openMenu(false)
     switch (type) {
       case 'about':
         navigateTo('/about')
@@ -93,20 +94,23 @@ class Header extends React.Component {
                 onClick={() => this.openMenu(false)}
               />
               </li>
-              <li onClick={() => navigateTo('contact')}>
-                <a>ĐẦU TRANG</a>
+              <li onClick={() => this.navigateMenu('about')}>
+                <p>Về chúng tôi</p>
               </li>
-              <li onClick={() => navigateTo('contact')}>
-                <a>DREAM LÀ GÌ</a>
+              <li onClick={() => this.navigateMenu('products')}>
+                <p>Sản phẩm</p>
               </li>
-              <li onClick={() => navigateTo('contact')}>
-                <a>TẠI SAO NÊN CHỌN?</a>
+              <li onClick={() => this.navigateMenu('news')}>
+                <p>Tin tức</p>
               </li>
-              <li onClick={() => navigateTo('contact')}>
-                <a>CÁCH HOẠT ĐỘNG</a>
+              <li onClick={() => this.navigateMenu('projects')}>
+                <p>Dự án mẫu</p>
               </li>
-              <li onClick={() => navigateTo('contact')}>
-                <a>LỘ TRÌNH DREAM</a>
+              <li onClick={() => this.navigateMenu('service')}>
+                <p>Dịch vụ</p>
+              </li>
+              <li onClick={() => this.navigateMenu('contact')}>
+                <p>Liên hệ</p>
               </li>
             </ul>
           </div>
