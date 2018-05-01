@@ -19,4 +19,8 @@
   .title {
     padding: 20px;
   }
+
+  @media (max-width: 768px) {
+    width: 98%;
+  }
 }
