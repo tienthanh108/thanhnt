@@ -26,11 +26,17 @@
     margin-top: 25px;
     display: flex;
     flex-direction: row;
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+    }
     .product {
       width: 80%;
       display: flex;
       flex-wrap: wrap;
       // border-left: solid 1px #ccc;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
     }
   }
 

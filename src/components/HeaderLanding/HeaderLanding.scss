@@ -30,7 +30,7 @@ $color_salem_approx: #008346;
   }
   .menuMobile {
     display: none;
-    background: #33a948;
+    background: #004ea1;
     width: 100%;
     position: fixed;
     top: -100%;
@@ -40,7 +40,7 @@ $color_salem_approx: #008346;
       right: 0;
     }
     .nav-stacked li {
-      padding: 21px 15px;
+      padding: 12px 15px;
       border-bottom: 2px solid $white;
       color: $white;
       text-align: center;
@@ -50,6 +50,10 @@ $color_salem_approx: #008346;
         &:hover {
           border: 0;
         }
+      }
+      p {
+        padding: 0;
+        margin: 0;
       }
       &.active a {
         background: none;
@@ -83,6 +87,7 @@ display: -webkit-flex;
       align-items: center;
       -webkit-align-items: center;
       height: 50px;
+      justify-content: flex-start;
     }
     // .logoContent {
     .logo {
@@ -102,7 +107,7 @@ display: -webkit-flex;
     // }
     .menuMobileButton {
       display: none;
-      background: #56bd5b url('assets/hambuger_menu.svg') no-repeat center;
+      background: #004ea1 url('assets/hambuger_menu.svg') no-repeat center;
       border: none;
       padding: 14px;
       @media (max-width: 768px) {
@@ -127,6 +132,8 @@ display: -webkit-flex;
       @media (max-width: 768px) {
         height: 22px;
         float: right;
+
+        display: none;
       }
       li {
         @media (max-width: 768px) {
