@@ -7,17 +7,18 @@ const Footer = () => (
     <div className={classes.content}>
       <div className={classes.top} />
       <div className={classes.left}>
-        <h4> 广州市锐高电子有限公司 </h4>
-        <h5>地址：广州市番禺区番禺大道北555号产业大厦二座706-709</h5>
-        <h5>电话：020-22883166 传真：020-22883266</h5>
-        <h5>电话：020-22883166 传真：020-22883266</h5>
-        <h5>电话：020-22883166 传真：020-22883266</h5>
+        <h4> Công ty cổ phần điện tử Phượng Hoàng </h4>
+        <h5>LK 05-14 Khu đô thị An Hưng - Dương Nội - Hà Đông - Hà Nội</h5>
+        <h5>Điện thoại liên hệ: 024 6671 1717</h5>
+        <h5>Mr.Vinh: 0903 468 429</h5>
+        <h5>Mr.Quân: 0933 991 338</h5>
+        <h5>Email: dmxvietnamcskh@dmx-audio.com</h5>
       </div>
       <div className={classes.right}>
         <img src={qrcode} alt='qrCodeDMX' />
       </div>
       <div className={classes.bottom}>
-        Copyright: Guangzhou high-Rui Electronics Co., Ltd.
+        Copyright: Công ty cổ phần điện tử Phượng Hoàng Co., Ltd.
       </div>
     </div>
   </div>
