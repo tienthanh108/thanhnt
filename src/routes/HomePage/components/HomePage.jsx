@@ -1,5 +1,6 @@
 
 import React from 'react'
+import ReactHTMLConverter from 'react-html-converter'
 import classes from './HomePage.scss'
 import SlideDiv from './SlideDiv'
 import { navigateTo } from '../../../utils/routing'
@@ -52,7 +53,8 @@ class HomePage extends React.Component {
               <button className={classes.titleButton}>About Us</button>
               <img src={aboutImagePath} alt='' onClick={() => navigateTo('/about')} />
               { about &&
-                <span> {about.content}</span>
+                new ReactHTMLConverter().convert(about.content)
+                // <span> {about.content}</span>
                }
             </div>
             <div className={classes.news}>
