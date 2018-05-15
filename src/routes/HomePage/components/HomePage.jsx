@@ -1,4 +1,3 @@
-
 import React from 'react'
 import classes from './HomePage.scss'
 import SlideDiv from './SlideDiv'
@@ -49,14 +48,19 @@ class HomePage extends React.Component {
         <div className={classes.content}>
           <div className={classes.middleContent}>
             <div className={classes.aboutUs}>
-              <button className={classes.titleButton}>About Us</button>
+              <button
+                className={classes.titleButton}
+                onClick={() => navigateTo('/contactUs')}
+              >About Us</button>
               <img src={aboutImagePath} alt='' onClick={() => navigateTo('/about')} />
               { about &&
                 <span> {about.content}</span>
                }
             </div>
             <div className={classes.news}>
-              <button className={classes.titleButton}>News Center</button>
+              <button className={classes.titleButton}
+                onClick={() => navigateTo('/news/list')}
+              >News Center</button>
               <img src={newsImagePath} alt='' />
               <div className={classes.newsContent}>
                 {
@@ -69,7 +73,9 @@ class HomePage extends React.Component {
               </div>
             </div>
             <div className={classes.products}>
-              <button className={classes.titleButton}>Products Center</button>
+              <button className={classes.titleButton}
+                onClick={() => navigateTo('/products')}
+              >Products Center</button>
               <div className={classes.productsContent}>
                 {
                   productTypeGroups && productTypeGroups.map((prodTypeGrp, index) =>
@@ -82,7 +88,15 @@ class HomePage extends React.Component {
             </div>
           </div>
           <div className={classes.slideContent}>
-            <button className={classes.titleButton}>Project Center</button>
+            <div className={classes.buttonGroup}>
+              <button className={classes.titleButton}
+                onClick={() => navigateTo('/projects')}
+              >Project Center</button>
+              <button className={classes.titleButton2}
+                onClick={() => navigateTo('/projects')}
+              >MORE +</button>
+
+            </div>
             <SlideDiv elements={projects} navigateProject={this.navigateProject} />
           </div>
         </div>
