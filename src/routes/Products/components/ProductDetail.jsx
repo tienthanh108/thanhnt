@@ -5,7 +5,6 @@ import classes from './ProductDetail.scss'
 const ProductDetail = (props) => (
   <div className={classes.contentInside}>
     <div className={classes.productDetail}>
-      <img src={props.element.imagePath} alt={props.element.name} />
       {new ReactHTMLConverter().convert(props.element.description)}
     </div>
   </div>

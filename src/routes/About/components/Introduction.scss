@@ -2,9 +2,18 @@
   width: 98%;
   margin: auto;
   display: flex;
-  .innerContent {
-    img {
-      float: right;
+  .content {
+    .innerContent {
+      img {
+        float: right;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .content {
+      width: 98%;
     }
   }
 }
