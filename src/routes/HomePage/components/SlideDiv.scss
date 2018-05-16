@@ -12,21 +12,27 @@
   .title {text-align: center;cusor:poiter;}
 }
 :global {
-  #sliderProduct.slick-dots li button:before {
+  div#sliderProduct .slick-dots li button:before {
     font-size: 20px;
   }
-  #sliderProduct.slick-next:before {
+  div#sliderProduct .slick-next:before {
     content: '';
   }
-  #sliderProduct.slick-next {
+  div#sliderProduct .slick-next {
     right: -20px;
     z-index: 10;
   }
-  #sliderProduct.slick-prev {
+  div#sliderProduct .slick-prev {
     left: -20px;
     z-index: 10;
   }
-  #sliderProduct.slick-prev:before {
+  div#sliderProduct .slick-next img {
+    height: 43px;
+  }
+  div#sliderProduct .slick-prev img {
+    height: 43px;
+  }
+  div#sliderProduct .slick-prev:before {
     content: '';
   }
 }

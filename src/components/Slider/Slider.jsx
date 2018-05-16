@@ -30,6 +30,12 @@ const MainSlider = (props) => {
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    responsive: [{
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+      },
+    }],
   }
 
   return (

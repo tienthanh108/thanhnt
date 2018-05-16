@@ -29,11 +29,14 @@ const SliderDiv = (props) => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
+    autoplay: true,
+    autoplaySpeed: 2000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [{
       breakpoint: 768,
       settings: {
+        arrows: false,
         slidesToShow: 1,
         slidesToScroll: 1,
       },
@@ -41,11 +44,11 @@ const SliderDiv = (props) => {
   }
 
   return (
-    <div className={classes.container}>
+    <div className={classes.container} id='sliderProduct'>
       {
         props.elements && props.elements.length > 0 &&
 
-        <Slider {...settings} id='sliderProduct'>
+        <Slider {...settings}>
           {
               props.elements.map((item, index) =>
                 <div data-index={index} key={index}>
