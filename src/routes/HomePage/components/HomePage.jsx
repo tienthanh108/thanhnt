@@ -55,7 +55,7 @@ class HomePage extends React.Component {
               >About Us</button>
               <img src={aboutImagePath} alt='' onClick={() => navigateTo('/about')} />
               { about &&
-                new ReactHTMLConverter().convert(about.content)
+                new ReactHTMLConverter().convert(about.subtitle)
                 // <span> {about.content}</span>
                }
             </div>
