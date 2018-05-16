@@ -79,7 +79,7 @@ export function getInitAboutInHome() {
       let about = {}
       if (abouts) {
         about = abouts ? abouts[0] : {}
-        about.content = about.content.substring(0, 200)
+        about.subtitle = about.subtitle ? about.subtitle : about.content.substring(0, 200)
       }
       dispatch({
         type: ABOUT,

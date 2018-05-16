@@ -17,7 +17,9 @@
       &:hover , &.active {
         background: url('assets/category.jpg');
         color: white;
-
+        color: white;
+        background-repeat: no-repeat;
+        background-size: cover;
       }
     }
   }

@@ -13,6 +13,11 @@
         color: #004ea1;
       }
     }
+    .titleButton2 {
+      font-size: 14px;
+      background: transparent;
+      border: none;
+    }
     .middleContent {
       border-top: 1px solid #cccccc;
       padding-top: 10px;
@@ -87,12 +92,12 @@
     .slideContent {
       border-top: 1px solid #cccccc;
       padding-top: 10px;
+      .buttonGroup {
+        display: flex;
+        justify-content: space-between;
+      }
       .slide {
         padding: 5px;
-        //img {
-        //  width: 100%;
-        //  height: calc(100% - 20px);
-        //}
       }
     }
   }

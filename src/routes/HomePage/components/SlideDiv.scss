@@ -3,9 +3,36 @@
   max-width: 1280px;
   margin: auto;
   padding: 10px;
-  img {
+  .img {
     width: 90%;
     margin: auto;
+    height: 108px;
+    object-fit: cover;
   }
   .title {text-align: center;cusor:poiter;}
+}
+:global {
+  div#sliderProduct .slick-dots li button:before {
+    font-size: 20px;
+  }
+  div#sliderProduct .slick-next:before {
+    content: '';
+  }
+  div#sliderProduct .slick-next {
+    right: -20px;
+    z-index: 10;
+  }
+  div#sliderProduct .slick-prev {
+    left: -20px;
+    z-index: 10;
+  }
+  div#sliderProduct .slick-next img {
+    height: 43px;
+  }
+  div#sliderProduct .slick-prev img {
+    height: 43px;
+  }
+  div#sliderProduct .slick-prev:before {
+    content: '';
+  }
 }
