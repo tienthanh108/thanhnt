@@ -26,6 +26,16 @@
         font-size:14px;
         font-weight:bold;
       }
+      @media (max-width: 768px) {
+        flex-direction: column;
+        justify-content: center;
+        table {
+          width: 99%;
+        }
+        .mapGoogle {
+          width: 99%;
+        }
+      }
     }
   }
 
