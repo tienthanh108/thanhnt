@@ -1,0 +1,15 @@
+.contentInside {
+  width: 100%;
+  border: #ccc solid 1px;
+  max-height: 500px;
+  overflow: scroll;
+  .productDetail {
+    margin: auto;
+    a {
+      margin-left: 20px;
+    }
+    .content {
+      border-bottom: 1px dashed #dedede;
+    }
+  }
+}

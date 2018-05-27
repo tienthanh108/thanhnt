@@ -35,6 +35,8 @@ export const urls = {
     getInitNewsInHome: '/initData/news',
     getInitProjectInHome: '/project',
     getServiceByParType: '/appParams/getByParType/:parType',
+    getGroupFileUploads: '/groupFileUploads',
+    getListFileUploadOfGroup: '/getListFileUploadOfGroup/:id',
   },
 }
 /**
@@ -219,6 +221,16 @@ export function getInitProjectInHome() {
 
 export function getInitAboutInHome() {
   const endpoint = getEndpoint('getInitAboutInHome')
+  return callApi(endpoint, null, 'GET')
+}
+
+export function getGroupFileUploads() {
+  const endpoint = getEndpoint('getGroupFileUploads')
+  return callApi(endpoint, null, 'GET')
+}
+
+export function getListFileUploadOfGroup(id) {
+  const endpoint = getEndpoint('getListFileUploadOfGroup').replace(':id', id)
   return callApi(endpoint, null, 'GET')
 }
 
