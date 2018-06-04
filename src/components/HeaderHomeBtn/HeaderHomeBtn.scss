@@ -1,0 +1,20 @@
+.container {
+  float: left;
+  display: inline;
+  width: 100%;
+  background: white;
+  @media (max-width: 768px) {
+    display: none;
+  }
+  button {
+    float: right;
+    margin-right: 2%;
+    margin-top: 5px;
+    background: transparent;
+    border: none;
+    color: #004ea1;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

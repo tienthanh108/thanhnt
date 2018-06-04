@@ -2,6 +2,7 @@ import React from 'react'
 import ReactHTMLConverter from 'react-html-converter'
 import classes from './Service.scss'
 import LeftMenu from './LeftMenu'
+import DownloadDetail from './DownloadDetail'
 
 class Service extends React.Component {
   constructor() {
@@ -15,17 +16,34 @@ class Service extends React.Component {
   }
 
   render() {
-    const { lsServices, content } = this.props
+    const { lsServices, content, typeService, groupDownloads, downloads, onChangeTypeService,
+      onChangeGroupDownloadById } = this.props
     const converter = new ReactHTMLConverter()
     return (
       <div className={classes.container}>
+        <div className={classes.topMenu}>
+          {
+            typeService && typeService === 'DOWNLOAD' && groupDownloads && groupDownloads.map((item, index) =>
+              <button key={index}
+                onClick={() => onChangeGroupDownloadById(item.id)}
+                className={item.active ? classes.active : ''}
+              >
+                {item.name}
+              </button>,
+            )
+          }
+        </div>
         <div className={classes.contentInside}>
-          <LeftMenu elements={lsServices} selectCategory={this.props.getServiceByParName} />
+          <LeftMenu elements={lsServices} selectCategory={onChangeTypeService} />
           <div className={classes.product}>
             {
-              content &&
+              typeService && typeService === 'DOWNLOAD' &&
+              <DownloadDetail downloads={downloads} />
+            }
+            {
+              typeService && typeService !== 'DOWNLOAD' && content &&
               <div>
-                {converter.convert(content.parValue)}
+                {converter.convert(content.description)}
               </div>
             }
           </div>
