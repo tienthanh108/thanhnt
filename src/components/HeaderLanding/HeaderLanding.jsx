@@ -100,6 +100,9 @@ class Header extends React.Component {
                 onClick={() => this.openMenu(false)}
               />
               </li>
+              <li onClick={() => this.navigateMenu('')}>
+                <p>Trang chủ</p>
+              </li>
               <li onClick={() => this.navigateMenu('about')}>
                 <p>Về chúng tôi</p>
               </li>
