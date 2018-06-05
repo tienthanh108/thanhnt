@@ -51,6 +51,12 @@ class Header extends React.Component {
           <button type='button' className='menuMobileButton' onClick={() => this.openMenu(true)} />
           <img className='logo' onClick={() => this.navigateMenu()} src={logo} alt='Logo DMX' />
           <ul className='menuListContainer'>
+            <li className={classNames('menuItem', this.props.home ? 'activeTab' : '')}
+              onClick={() => this.navigateMenu('')}
+            >
+              <p>Trang chủ</p>
+              <p>HOME</p>
+            </li>
             <li className={classNames('menuItem', this.props.about ? 'activeTab' : '')}
               onClick={() => this.navigateMenu('about')}
             >

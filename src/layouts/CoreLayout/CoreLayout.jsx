@@ -1,7 +1,7 @@
 import React from 'react'
 import 'styles/core.scss'
 import HeaderLanding from '../../components/HeaderLanding/HeaderLanding'
-import HeaderHomeBtn from '../../components/HeaderHomeBtn/HeaderHomeBtn'
+// import HeaderHomeBtn from '../../components/HeaderHomeBtn/HeaderHomeBtn'
 import Slider from '../../components/Slider/Slider'
 import Footer from '../../components/Footer/Footer'
 import classes from './CoreLayout.scss'
@@ -36,7 +36,6 @@ class CoreLayout extends React.Component {
         {this.props.loading && <div className={classes.loaderContainer}>
           <div className={classes.loader}>Loading...</div>
         </div>}
-        <HeaderHomeBtn />
         <HeaderLanding />
         <Slider banners={this.props.banners} />
         <div className={classes.maxWidth}>
