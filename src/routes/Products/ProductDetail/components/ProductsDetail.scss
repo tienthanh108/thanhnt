@@ -13,21 +13,32 @@
       background-color: transparent;
       padding: 4px 8px 4px 8px;
       margin-left: 10px;
-      &:hover {
-        background: url('assets/category.jpg')
+      display: block;
+      &:hover , &.active {
+        background: url('assets/category.jpg');
+        color: white;
+        color: white;
+        background-repeat: no-repeat;
+        background-size: cover;
       }
     }
   }
   .contentInside {
-    border: solid 1px #ccc;
+    // border: solid 1px #ccc;
     margin-top: 25px;
     display: flex;
     flex-direction: row;
     .productDetail {
       width: 80%;
-      display: flex;
+      margin: auto;
+      word-wrap: break-word;
+      img {
+        width: 60%;
+      }
+    }
+    @media (max-width: 768px) {
       flex-wrap: wrap;
-      border-left: solid 1px #ccc;
     }
   }
+
 }

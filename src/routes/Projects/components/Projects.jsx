@@ -2,7 +2,7 @@ import React from 'react'
 import ChangePage from '../../../components/ChangePage/ChangePage'
 import classes from './Projects.scss'
 import ProjectElement from './ProjectElement'
-import ProductDetail from '../../Products/components/ProductDetail'
+import ProjectDetail from './ProjectDetail'
 
 class News extends React.Component {
   constructor() {
@@ -52,7 +52,7 @@ class News extends React.Component {
         <div className={classes.content}>
           {
             viewDetail && project &&
-            <ProductDetail element={project} />
+            <ProjectDetail element={project} />
           }
           {
             !viewDetail && projects && projects.map((element, index) =>

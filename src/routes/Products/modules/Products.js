@@ -1,5 +1,6 @@
 import * as API from 'middleware/api'
 import { isEmpty } from '../../../utils/commonLogicApp'
+import { navigateTo } from '../../../utils/routing'
 // import moment from 'moment'
 
 export const GET_LIST_PRODUCT_TYPE_GROUP = 'GET_LIST_PRODUCT_TYPE_GROUP'
@@ -107,6 +108,7 @@ export function getDetailProductById(id) {
           product,
         },
       })
+      navigateTo('/products/detail')
     })
   }
 }

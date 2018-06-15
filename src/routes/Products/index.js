@@ -1,6 +1,10 @@
-import Products from './containers/Products'
+import ProductDetail from './ProductDetail'
+import ProductsList from './ProductList'
 
 export default {
   path: 'products',
-  component: Products,
+  childRoutes: [
+    ProductDetail,
+    ProductsList,
+  ],
 }

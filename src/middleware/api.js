@@ -18,6 +18,7 @@ export const urls = {
     showDetailNews: '/news/:id',
     getAllProductTypeGroup: '/productTypeGroup',
     getLsProductTypeByGroupId: '/productTypeGroup/:id',
+    getListProductOfProductType: '/getListProductOfProductType/:id',
     getLsProductByTypeId: '/productType/:id',
     getDetailProductById: '/products/:id',
     getAllProjectGroup: '/projectGroup',
@@ -232,6 +233,11 @@ export function getGroupFileUploads() {
 export function getListFileUploadOfGroup(id) {
   const endpoint = getEndpoint('getListFileUploadOfGroup').replace(':id', id)
   return callApi(endpoint, null, 'GET')
+}
+
+export function getListProductOfProductType(data) {
+  const endpoint = getEndpoint('getListProductOfProductType').replace(':id', data.id)
+  return callApi(endpoint, null, 'POST', data)
 }
 
 export default callApi

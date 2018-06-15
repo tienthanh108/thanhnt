@@ -1,12 +1,11 @@
 import React from 'react'
-import ChangePage from '../../../components/ChangePage/ChangePage'
-import classes from './Products.scss'
+import ChangePage from '../../../../components/ChangePage/ChangePage'
+import classes from './ProductsList.scss'
 import LeftMenu from './LeftMenu'
 import ProductElement from './ProductElement'
-import ProductDetail from './ProductDetail'
 
 
-class Products extends React.Component {
+class ProductsList extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -14,7 +13,9 @@ class Products extends React.Component {
   }
 
   componentWillMount() {
-    this.props.initProduct()
+    if (!this.props.productTypeGroups) {
+      this.props.initProduct()
+    }
   }
 
   render() {
@@ -30,7 +31,7 @@ class Products extends React.Component {
     Math.min(
       parseInt(document.getElementById('pageNumberDream').value, 10),
       4) : 1
-    const { productTypeGroups, productTypes, products, product, viewDetail } = this.props
+    const { productTypeGroups, productTypes, products, viewDetail } = this.props
     return (
       <div className={classes.container}>
         <div className={classes.topMenu}>
@@ -48,10 +49,6 @@ class Products extends React.Component {
         <div className={classes.contentInside}>
           <LeftMenu elements={productTypes} selectCategory={this.props.getLsProductByTypeId} />
           <div className={classes.product}>
-            {
-              viewDetail && product &&
-              <ProductDetail element={product} />
-            }
             {
               !viewDetail && products && products.map((element, index) =>
                 <ProductElement key={index} element={element}
@@ -78,7 +75,7 @@ class Products extends React.Component {
   }
 }
 
-Products.propTypes = {
+ProductsList.propTypes = {
 }
 
-export default Products
+export default ProductsList

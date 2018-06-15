@@ -1,6 +1,6 @@
 import ProductDetail from './containers/ProductDetail'
 
 export default {
-  path: 'productDetail',
+  path: 'detail',
   component: ProductDetail,
 }
