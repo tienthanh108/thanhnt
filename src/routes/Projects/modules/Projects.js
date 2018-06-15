@@ -1,4 +1,5 @@
 import * as API from 'middleware/api'
+import { navigateTo } from '../../../utils/routing'
 
 export const GET_LIST_PROJECT_GROUP = 'GET_LIST_PROJECT_GROUP'
 export const GET_LIST_PROJECT = 'GET_LIST_PROJECT'
@@ -64,6 +65,7 @@ export function getDetailProjectById(id) {
           project,
         },
       })
+      navigateTo('/projects/detail')
     })
   }
 }

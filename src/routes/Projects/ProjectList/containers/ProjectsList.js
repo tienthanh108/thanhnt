@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import Projects from '../components/Projects'
-import { getLsProjectByGroupId, getDetailProjectById, initProject } from '../modules/Projects'
+import ProjectsList from '../components/ProjectsList'
+import { getLsProjectByGroupId, getDetailProjectById, initProject } from '../../modules/Projects'
 
 export const mapStateToProps = (store) => ({
   projectGroups: store.project.projectGroups,
@@ -15,4 +15,4 @@ export const mapDispatchToProps = {
   initProject,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Projects)
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectsList)

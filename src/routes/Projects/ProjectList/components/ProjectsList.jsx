@@ -1,10 +1,9 @@
 import React from 'react'
-import ChangePage from '../../../components/ChangePage/ChangePage'
-import classes from './Projects.scss'
+import ChangePage from '../../../../components/ChangePage/ChangePage'
+import classes from './ProjectsList.scss'
 import ProjectElement from './ProjectElement'
-import ProjectDetail from './ProjectDetail'
 
-class News extends React.Component {
+class ProjectsList extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -20,6 +19,9 @@ class News extends React.Component {
     }
   }
 
+  topMenuClick = (id) => {
+    this.props.getLsProjectByGroupId(id)
+  }
 
   render() {
     const minus5 = document.getElementById('pageNumberDream') ?
@@ -34,14 +36,14 @@ class News extends React.Component {
     Math.min(
       parseInt(document.getElementById('pageNumberDream').value, 10),
       4) : 1
-    const { projectGroups, projects, project, viewDetail } = this.props
+    const { projectGroups, projects, viewDetail } = this.props
     return (
       <div className={classes.container}>
         <div className={classes.topMenu}>
           {
             projectGroups && projectGroups.map((item, index) =>
               <button key={index}
-                onClick={() => this.props.getLsProjectByGroupId(item.id)}
+                onClick={() => this.topMenuClick(item.id)}
                 className={item.active ? classes.active : ''}
               >
                 {item.name}
@@ -50,10 +52,6 @@ class News extends React.Component {
           }
         </div>
         <div className={classes.content}>
-          {
-            viewDetail && project &&
-            <ProjectDetail element={project} />
-          }
           {
             !viewDetail && projects && projects.map((element, index) =>
               <ProjectElement key={index} element={element}
@@ -79,4 +77,4 @@ class News extends React.Component {
   }
 }
 
-export default News
+export default ProjectsList
