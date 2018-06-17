@@ -1,6 +1,10 @@
-import Projects from './containers/Projects'
+import ProjectList from './ProjectList'
+import ProjectDetail from './ProjectDetail'
 
 export default {
   path: 'projects',
-  component: Projects,
+  childRoutes: [
+    ProjectDetail,
+    ProjectList,
+  ],
 }

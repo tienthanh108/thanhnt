@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import ProductsList from '../components/ProductsList'
-import { initProduct, getLsProductTypeByGroupId, getLsProductByTypeId, getDetailProductById }
+import { initProduct, getLsProductTypeByGroupId, getLsProductByTypeId,
+  getListProductOfProductType, getDetailProductById }
   from '../../modules/Products'
 
 export const mapStateToProps = (store) => ({
@@ -14,8 +15,9 @@ export const mapStateToProps = (store) => ({
 export const mapDispatchToProps = {
   initProduct,
   getLsProductTypeByGroupId,
-  getLsProductByTypeId,
+  getListProductOfProductType,
   getDetailProductById,
+  getLsProductByTypeId,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductsList)

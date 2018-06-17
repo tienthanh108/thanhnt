@@ -17,20 +17,28 @@ class ProductsList extends React.Component {
       this.props.initProduct()
     }
   }
+  componentDidMount() {
+    document.getElementById('pageNumberProduct').value = 1
+  }
 
   render() {
-    const minus5 = document.getElementById('pageNumberDream') ?
-      Math.max(parseInt(document.getElementById('pageNumberDream').value, 10) - 5, 1) : 1
-    const minus1 = document.getElementById('pageNumberDream') ?
-      Math.max(parseInt(document.getElementById('pageNumberDream').value, 10) - 1, 1) : 1
-    const add1 = document.getElementById('pageNumberDream') ?
-      Math.min(parseInt(document.getElementById('pageNumberDream').value, 10) + 1, 4) : 1
-    const add5 = document.getElementById('pageNumberDream') ?
-      Math.min(parseInt(document.getElementById('pageNumberDream').value, 10) + 5, 4) : 1
-    const goto = document.getElementById('pageNumberDream') ?
+    const maxPage = sessionStorage.getItem('totalCount')
+    ? Math.floor(sessionStorage.getItem('totalCount') / 6) + 1
+    : 0
+    const page = document.getElementById('pageNumberProduct')
+    const minus5 = page ?
+      Math.max(parseInt(page.value, 10) - 4, 0) : 0
+    const minus1 = page ?
+      Math.max(parseInt(page.value, 10) - 2, 0) : 0
+    const add1 = page ?
+      Math.min(parseInt(page.value, 10), maxPage) : 0
+    const add5 = page ?
+      Math.min(parseInt(page.value, 10) + 4, maxPage) : 0
+    const goto = page ?
     Math.min(
-      parseInt(document.getElementById('pageNumberDream').value, 10),
-      4) : 1
+      parseInt(page.value, 10),
+      4) : 0
+
     const { productTypeGroups, productTypes, products, viewDetail } = this.props
     return (
       <div className={classes.container}>
@@ -59,13 +67,14 @@ class ProductsList extends React.Component {
             {
               !viewDetail &&
               <ChangePage
-                function={this.props.getDreamList}
+                idInput='pageNumberProduct'
+                function={this.props.getLsProductByTypeId}
                 minus5={minus5}
                 minus1={minus1}
                 add1={add1}
                 add5={add5}
                 goto={goto}
-                maxPage={6}
+                maxPage={maxPage}
               />
             }
           </div>

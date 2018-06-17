@@ -27,7 +27,7 @@ class Header extends React.Component {
         navigateTo('/news/list')
         break
       case 'projects':
-        navigateTo('/projects')
+        navigateTo('/projects/list')
         break
       case 'service':
         navigateTo('/service')
@@ -106,7 +106,7 @@ class Header extends React.Component {
               <li onClick={() => this.navigateMenu('about')}>
                 <p>Về chúng tôi</p>
               </li>
-              <li onClick={() => this.navigateMenu('products/list')}>
+              <li onClick={() => this.navigateMenu('products')}>
                 <p>Sản phẩm</p>
               </li>
               <li onClick={() => this.navigateMenu('news')}>
