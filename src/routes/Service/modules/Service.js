@@ -60,7 +60,7 @@ export function onChangeTypeService(typeService) {
     if (lsServices) {
       for (let i = 0; i < lsServices.length; i += 1) {
         lsServices[i].active = false
-        if (typeService === lsServices[i].parValue) {
+        if (typeService === lsServices[i].parName) {
           items = lsServices[i]
           lsServices[i].active = true
         }

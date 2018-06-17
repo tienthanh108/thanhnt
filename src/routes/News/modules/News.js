@@ -5,14 +5,20 @@ export const GET_LIST_NEWS = 'GET_LIST_NEWS'
 export const GET_LIST_NEWS_ERROR = 'GET_LIST_NEWS_ERROR'
 export const DETAIL_NEWS = 'DETAIL_NEWS'
 
-export function getListNews() {
+export function getListNews(page = 0) {
   return (dispatch) => {
-    API.getListNews().then((response) => {
-      const newsList = response.body
+    const data = {
+      pageNumber: page,
+      rowsPerPage: 6,
+    }
+    API.getListNews(data).then((response) => {
+      const news = response.body
+      sessionStorage.setItem('totalCount', news.totalCount)
+      document.getElementById('pageNumberNews').value = news.pageNumber + 1
       dispatch({
         type: GET_LIST_NEWS,
         payload: {
-          newsList,
+          newsList: news.listNews,
         },
       })
     })

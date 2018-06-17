@@ -1,8 +1,7 @@
 import React from 'react'
-// import speaker from 'assets/news1.jpg'
-import ChangePage from '../../../../components/ChangePage/ChangePage'
 import classes from './NewsList.scss'
 import NewsElement from './NewsElement'
+import ChangePageNews from '../../../../components/ChangePage/ChangePageNews'
 
 class NewList extends React.Component {
   constructor() {
@@ -10,33 +9,43 @@ class NewList extends React.Component {
     this.state = {
     }
   }
-
   componentWillMount() {
     this.props.getListNews()
   }
+
+  componentDidMount() {
+    if (document.getElementById('pageNumberNews')) {
+      document.getElementById('pageNumberNews').value = 1
+    }
+  }
+
   render() {
-    const { newsList } = this.props
-    const minus5 = document.getElementById('pageNumberDream') ?
-      Math.max(parseInt(document.getElementById('pageNumberDream').value, 10) - 5, 1) : 1
-    const minus1 = document.getElementById('pageNumberDream') ?
-      Math.max(parseInt(document.getElementById('pageNumberDream').value, 10) - 1, 1) : 1
-    const add1 = document.getElementById('pageNumberDream') ?
-      Math.min(parseInt(document.getElementById('pageNumberDream').value, 10) + 1, 4) : 1
-    const add5 = document.getElementById('pageNumberDream') ?
-      Math.min(parseInt(document.getElementById('pageNumberDream').value, 10) + 5, 4) : 1
-    const goto = document.getElementById('pageNumberDream') ?
+    const maxPage = sessionStorage.getItem('totalCount')
+      ? Math.floor(sessionStorage.getItem('totalCount') / 6) + 1
+      : 0
+    const page = document.getElementById('pageNumberNews')
+    const minus5 = page ?
+      Math.max(parseInt(page.value, 10) - 4, 0) : 0
+    const minus1 = page ?
+      Math.max(parseInt(page.value, 10) - 2, 0) : 0
+    const add1 = page ?
+      Math.min(parseInt(page.value, 10), maxPage) : 0
+    const add5 = page ?
+      Math.min(parseInt(page.value, 10) + 4, maxPage) : 0
+    const goto = page ?
       Math.min(
-        parseInt(document.getElementById('pageNumberDream').value, 10),
-        4) : 1
+        parseInt(page.value, 10),
+        4) : 0
     return (
       <div className={classes.container}>
         {
-          newsList && newsList.map((element, index) =>
+          this.props.newsList && this.props.newsList.map((element, index) =>
             <NewsElement key={index} element={element} />,
           )
         }
-        <ChangePage
-          function={this.props.getDreamList}
+        <ChangePageNews
+          idInput='pageNumberNews'
+          function={this.props.getListNews}
           minus5={minus5}
           minus1={minus1}
           add1={add1}

@@ -18,8 +18,7 @@ export function resetActive(list, id) {
   }
 }
 
-// export function getLsProjectByGroupId(id = sessionStorage.getItem('currentType'), page = 0) {
-export function getLsProjectByGroupId(id) {
+export function getLsProjectByGroupId(id = sessionStorage.getItem('currentType'), page = 0) {
   return (dispatch, getState) => new Promise((resolve) => {
     const projectGroups = getState().project.projectGroups
     resetActive(projectGroups, id)
@@ -35,19 +34,16 @@ export function getLsProjectByGroupId(id) {
         viewDetail: false,
       },
     })
-    // const data = {
-    //   pageNumber: page,
-    //   rowsPerPage: 6,
-    // }
-    // API.getListProjectOfGroup(data, id).then((response) => {
-    // API.getListProjectOfGroup(id).then((response) => {
-
-    API.getLsProjectByGroupId(id).then((response) => {
+    const data = {
+      pageNumber: page,
+      rowsPerPage: 6,
+    }
+    API.getListProjectOfGroup(data, id).then((response) => {
       const projectGroup = response.body
       const projects = projectGroup ? projectGroup.listProject : []
-      // sessionStorage.setItem('totalCount', projectGroup.totalCount)
-      // sessionStorage.setItem('currentType', id)
-      // document.getElementById('pageNumberProject').value = projectGroup.pageNumber + 1
+      sessionStorage.setItem('totalCount', projectGroup.totalCount)
+      sessionStorage.setItem('currentType', id)
+      document.getElementById('pageNumberProject').value = projectGroup.pageNumber + 1
       dispatch({
         type: GET_LIST_PROJECT,
         payload: {
@@ -105,7 +101,6 @@ export function initProject() {
     })
   })
 }
-
 const ACTION_HANDLERS = {
   [GET_LIST_PROJECT_GROUP]: (state, action) => ({ ...state, ...action.payload }),
   [GET_LIST_PROJECT]: (state, action) => ({ ...state, ...action.payload }),
