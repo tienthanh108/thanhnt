@@ -21,7 +21,7 @@ export function resetActive(list, id) {
   }
 }
 
-export function getLsProductByTypeId(id) {
+export function getLsProductByTypeId(id = sessionStorage.getItem('currentType'), page = 0) {
   return (dispatch, getState) => new Promise((resolve) => {
     const productTypes = getState().products.productTypes
     resetActive(productTypes, id)
@@ -37,9 +37,17 @@ export function getLsProductByTypeId(id) {
         viewDetail: false,
       },
     })
-    API.getLsProductByTypeId(id).then((response) => {
+    const data = {
+      pageNumber: page,
+      rowsPerPage: 6,
+    }
+    API.getListProductOfProductType(data, id).then((response) => {
       const productType = response.body
-      const products = productType ? productType.lstProduct : []
+      const products = productType ? productType.listProduct : []
+      // sessionStorage.setItem('pageNumber', productType.pageNumber)
+      sessionStorage.setItem('totalCount', productType.totalCount)
+      sessionStorage.setItem('currentType', id)
+      document.getElementById('pageNumberProduct').value = productType.pageNumber + 1
       dispatch({
         type: GET_LIST_PRODUCT,
         payload: {
