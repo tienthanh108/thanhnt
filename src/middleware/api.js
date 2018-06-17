@@ -23,6 +23,7 @@ export const urls = {
     getDetailProductById: '/products/:id',
     getAllProjectGroup: '/projectGroup',
     getLsProjectByGroupId: '/projectGroup/:id',
+    getListProjectOfGroup: '/getListProjectOfGroup/:id',
     getDetailProjectById: '/project/:id',
     getBanner: '/initData/bannerImage',
     getInitNews: '/initData/news',
@@ -237,6 +238,11 @@ export function getListFileUploadOfGroup(id) {
 
 export function getListProductOfProductType(data, id) {
   const endpoint = getEndpoint('getListProductOfProductType').replace(':id', id)
+  return callApi(endpoint, data, 'POST')
+}
+
+export function getListProjectOfGroup(data, id) {
+  const endpoint = getEndpoint('getListProjectOfGroup').replace(':id', id)
   return callApi(endpoint, data, 'POST')
 }
 

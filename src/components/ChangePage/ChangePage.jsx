@@ -13,7 +13,7 @@ const ChangePage = (props) => (
       onClick={() => props.function(sessionStorage.getItem('currentType'), props.minus1)}
     > <span className={classes.leftIcon} /> </button>
     <div className={classes.pageNumber}>
-      <input id='pageNumberProduct' type='number' />/{props.maxPage}
+      <input id={props.idInput} type='number' />/{props.maxPage}
     </div>
     <button className={classes.goButton}
       onClick={() => props.function(sessionStorage.getItem('currentType'), props.goto)}

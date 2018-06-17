@@ -67,6 +67,7 @@ class ProductsList extends React.Component {
             {
               !viewDetail &&
               <ChangePage
+                idInput='pageNumberProduct'
                 function={this.props.getLsProductByTypeId}
                 minus5={minus5}
                 minus1={minus1}
