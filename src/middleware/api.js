@@ -14,7 +14,7 @@ const endpointLocation = 'local'
 export const urls = {
   remote: {},
   local: {
-    getListNews: '/news/',
+    getListNews: '/newsPagging',
     showDetailNews: '/news/:id',
     getAllProductTypeGroup: '/productTypeGroup',
     getLsProductTypeByGroupId: '/productTypeGroup/:id',
@@ -129,7 +129,7 @@ export function getEndpointImageResource() {
 /**
  * Get list of predefined getListIncomeMonth
  */
-export const getListNews = () => callApi(`${getEndpoint('getListNews')}`, null, 'GET', {}, 5000)
+// export const getListNews = () => callApi(`${getEndpoint('getListNews')}`, null, 'GET', {}, 5000)
 
 export function showDetailNews(id) {
   const endpoint = getEndpoint('showDetailNews').replace(':id', id)
@@ -243,6 +243,10 @@ export function getListProductOfProductType(data, id) {
 
 export function getListProjectOfGroup(data, id) {
   const endpoint = getEndpoint('getListProjectOfGroup').replace(':id', id)
+  return callApi(endpoint, data, 'POST')
+}
+export function getListNews(data) {
+  const endpoint = getEndpoint('getListNews')
   return callApi(endpoint, data, 'POST')
 }
 

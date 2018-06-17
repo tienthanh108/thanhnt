@@ -11,14 +11,15 @@ class ProductsList extends React.Component {
     this.state = {
     }
   }
-
   componentWillMount() {
-    if (!this.props.productTypeGroups) {
-      this.props.initProduct()
-    }
+    // if (!this.props.productTypeGroups) {
+    this.props.initProduct()
+    // }
   }
   componentDidMount() {
-    document.getElementById('pageNumberProduct').value = 1
+    if (document.getElementById('pageNumberProduct')) {
+      document.getElementById('pageNumberProduct').value = 1
+    }
   }
 
   render() {

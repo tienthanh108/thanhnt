@@ -7,10 +7,10 @@ const LeftMenu = (props) => (
     {
       props.elements && props.elements.map((element, index) =>
         <button key={index}
-          onClick={() => props.selectCategory(element.parValue)}
+          onClick={() => props.selectCategory(element.parName)}
           className={element.active ? classes.active : ''}
         >
-          {element.parName}
+          {element.parValue}
         </button>,
       )
     }
