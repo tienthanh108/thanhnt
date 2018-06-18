@@ -1,0 +1,72 @@
+.modalDialog {
+  width: 70%;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 4px 4px 30px 0 rgba(64, 58, 129, 0.4);
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+  .pd0 {
+    padding: 0px!important;
+    @media (max-width: 768px) {
+      >button {
+        width: 110px !important;
+      }
+    }
+  }
+  .container {
+    display: flex;
+display: -webkit-flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    min-height: 300px;
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: left;
+      color: #8f8f8f;
+      text-transform: uppercase;
+      padding-top: 15px;
+      padding-bottom: 20px;
+      img {
+        margin-right: 15px;
+      }
+      @media (max-width: 768px) {
+        text-align: center;
+      }
+    }
+    .contentConfirm {
+      display: block;
+      text-align: center;
+      width: 90%;
+      max-height: 400px;
+      overflow-y: scroll;
+      border-radius: 8px;
+      background-color: #eef8fc;
+      display: flex;
+      display: -webkit-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: #8f8f8f;
+      padding-right: 20px;
+      padding-left: 20px;
+      flex-direction: column;
+      @media (max-width: 768px) {
+        font-size: 13px;
+        padding-right: 10px;
+        padding-left: 10px;
+        width: 100%;
+      }
+      .nameDream {
+        color: #46c909;
+        text-transform: uppercase;
+      }
+      .fullView{
+        margin-top: 5px;
+      }
+    }
+
+  }
+}

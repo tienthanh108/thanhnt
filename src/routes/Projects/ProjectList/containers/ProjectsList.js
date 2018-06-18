@@ -4,8 +4,8 @@ import { getLsProjectByGroupId, getDetailProjectById, initProject } from '../../
 
 export const mapStateToProps = (store) => ({
   projectGroups: store.project.projectGroups,
-  projects: store.project.projects,
-  project: store.project.project,
+  projects: store.project.projects || [],
+  project: store.project.project || {},
   viewDetail: store.project.viewDetail,
 })
 

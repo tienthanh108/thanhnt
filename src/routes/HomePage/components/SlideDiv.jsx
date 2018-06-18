@@ -47,16 +47,17 @@ const SliderDiv = (props) => {
     <div className={classes.container} id='sliderProduct'>
       {
         props.elements && props.elements.length > 0 &&
-
         <Slider {...settings}>
           {
-              props.elements.map((item, index) =>
-                <div data-index={index} key={index}>
-                  <img src={item.imagePath} className={classes.img} alt={item.description} />
-                  <div className={classes.title} onClick={() => props.navigateProject(item.id)}>{item.name}</div>
-                </div>,
-              )
-            }
+            props.elements.map((item, index) =>
+              <div data-index={index} key={index} onClick={() => props.navigateProject(item.id)}
+                className={classes.warper}
+              >
+                <img src={item.imagePath} className={classes.img} alt={item.description} />
+                <div className={classes.title}>{item.name}</div>
+              </div>,
+            )
+          }
         </Slider>
     }
     </div>

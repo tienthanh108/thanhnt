@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import HomePage from '../components/HomePage'
-import { initHomePage, getInitNewsInHome, getInitProductInHome, getInitAboutInHome, getInitProjectInHome }
+import { initHomePage, getInitNewsInHome, getInitProductInHome, getDetailProjectById,
+  getInitAboutInHome, getInitProjectInHome }
   from '../modules/HomePage'
 
 const mapStateToProps = (store) => ({
@@ -8,7 +9,8 @@ const mapStateToProps = (store) => ({
   newsImagePath: store.home.newsImagePath,
   news: store.home.news,
   productTypeGroups: store.home.productTypeGroups,
-  projects: store.home.projects,
+  projects: store.home.projects || [],
+  project: store.home.project || {},
   about: store.home.about,
 })
 
@@ -18,6 +20,7 @@ const mapDispatchToProps = {
   getInitProductInHome,
   getInitProjectInHome,
   getInitAboutInHome,
+  getDetailProjectById,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage)
