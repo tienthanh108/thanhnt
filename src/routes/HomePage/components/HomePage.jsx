@@ -3,6 +3,7 @@ import ReactHTMLConverter from 'react-html-converter'
 import classes from './HomePage.scss'
 import SlideDiv from './SlideDiv'
 import { navigateTo } from '../../../utils/routing'
+import DlgDetailProject from '../../../components/DlgDetailProject/DlgDetailProject'
 
 
 class HomePage extends React.Component {
@@ -23,7 +24,7 @@ class HomePage extends React.Component {
   navigateProduct = (id) => {
     if (id) {
       sessionStorage.setItem('prodTypeGrpId', id)
-      navigateTo('/products')
+      navigateTo('/products/list')
     }
   }
 
@@ -35,15 +36,12 @@ class HomePage extends React.Component {
   }
 
   navigateProject = (id) => {
-    if (id) {
-      sessionStorage.setItem('projectId', id)
-      navigateTo('/projects')
-    }
+    this.props.getDetailProjectById(id)
   }
 
 
   render() {
-    const { aboutImagePath, newsImagePath, news, productTypeGroups, projects, about } = this.props
+    const { aboutImagePath, newsImagePath, news, productTypeGroups, projects, about, project } = this.props
     return (
       <div className={classes.homePage}>
         <div className={classes.content}>
@@ -76,7 +74,7 @@ class HomePage extends React.Component {
             </div>
             <div className={classes.products}>
               <button className={classes.titleButton}
-                onClick={() => navigateTo('/products')}
+                onClick={() => navigateTo('/products/list')}
               >Products Center</button>
               <div className={classes.productsContent}>
                 {
@@ -92,16 +90,17 @@ class HomePage extends React.Component {
           <div className={classes.slideContent}>
             <div className={classes.buttonGroup}>
               <button className={classes.titleButton}
-                onClick={() => navigateTo('/projects')}
+                onClick={() => navigateTo('/projects/list')}
               >Project Center</button>
               <button className={classes.titleButton2}
-                onClick={() => navigateTo('/projects')}
+                onClick={() => navigateTo('/projects/list')}
               >MORE +</button>
 
             </div>
             <SlideDiv elements={projects} navigateProject={this.navigateProject} />
           </div>
         </div>
+        <DlgDetailProject project={project} id='dlgDetailProjectHome' />
       </div>
     )
   }

@@ -2,6 +2,7 @@ import React from 'react'
 import ChangePage from '../../../../components/ChangePage/ChangePage'
 import classes from './ProjectsList.scss'
 import ProjectElement from './ProjectElement'
+import DlgDetailProject from '../../../../components/DlgDetailProject/DlgDetailProject'
 
 class ProjectsList extends React.Component {
   constructor() {
@@ -44,7 +45,7 @@ class ProjectsList extends React.Component {
       Math.min(
         parseInt(page.value, 10),
         4) : 0
-    const { projectGroups, projects, viewDetail } = this.props
+    const { projectGroups, projects, project, viewDetail } = this.props
     return (
       <div className={classes.container}>
         <div className={classes.topMenu}>
@@ -81,6 +82,7 @@ class ProjectsList extends React.Component {
             />
           }
         </div>
+        <DlgDetailProject project={project} id='dlgDetailProject' />
       </div>
     )
   }

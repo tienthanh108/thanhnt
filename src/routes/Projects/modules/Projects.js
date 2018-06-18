@@ -1,11 +1,10 @@
 import * as API from 'middleware/api'
-import { navigateTo } from '../../../utils/routing'
 
 export const GET_LIST_PROJECT_GROUP = 'GET_LIST_PROJECT_GROUP'
 export const GET_LIST_PROJECT = 'GET_LIST_PROJECT'
-export const GET_PROJECT = 'GET_PROJECT'
 export const GET_PROJECT_ERROR = 'GET_PROJECT_ERROR'
 export const VIEW_DETAIL = 'VIEW_DETAIL'
+export const GET_PROJECT = 'GET_PROJECT'
 
 export function resetActive(list, id) {
   if (list && list.length > 0) {
@@ -60,18 +59,12 @@ export function getDetailProjectById(id) {
     API.getDetailProjectById(id).then((response) => {
       const project = response.body
       dispatch({
-        type: VIEW_DETAIL,
-        payload: {
-          viewDetail: true,
-        },
-      })
-      dispatch({
         type: GET_PROJECT,
         payload: {
           project,
         },
       })
-      navigateTo('/projects/detail')
+      $('#dlgDetailProject').modal('show')
     })
   }
 }
@@ -104,8 +97,8 @@ export function initProject() {
 const ACTION_HANDLERS = {
   [GET_LIST_PROJECT_GROUP]: (state, action) => ({ ...state, ...action.payload }),
   [GET_LIST_PROJECT]: (state, action) => ({ ...state, ...action.payload }),
-  [GET_PROJECT]: (state, action) => ({ ...state, ...action.payload }),
   [VIEW_DETAIL]: (state, action) => ({ ...state, ...action.payload }),
+  [GET_PROJECT]: (state, action) => ({ ...state, ...action.payload }),
   [GET_PROJECT_ERROR]: (state, action) => ({ ...state, ...action.payload }),
 }
 const initialState = {

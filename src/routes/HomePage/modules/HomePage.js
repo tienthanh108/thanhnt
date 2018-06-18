@@ -6,6 +6,7 @@ export const NEWS_LIST = 'NEWS_LIST'
 export const PRODUCTS_TYPE_GROUP_LIST = 'PRODUCTS_TYPE_GROUP_LIST'
 export const PROJECT_LIST = 'PROJECT_LIST'
 export const ABOUT = 'ABOUT'
+export const GET_PROJECT = 'GET_PROJECT'
 
 export function getImageHome() {
   return (dispatch) => {
@@ -91,6 +92,21 @@ export function getInitAboutInHome() {
   }
 }
 
+export function getDetailProjectById(id) {
+  return (dispatch) => {
+    API.getDetailProjectById(id).then((response) => {
+      const project = response.body
+      dispatch({
+        type: GET_PROJECT,
+        payload: {
+          project,
+        },
+      })
+      $('#dlgDetailProjectHome').modal('show')
+    })
+  }
+}
+
 export function initHomePage() {
   return (dispatch) => new Promise((resolve) => {
     dispatch(getImageHome())
@@ -109,6 +125,7 @@ const ACTION_HANDLERS = {
   [NEWS_LIST]: (state, action) => ({ ...state, ...action.payload }),
   [PRODUCTS_TYPE_GROUP_LIST]: (state, action) => ({ ...state, ...action.payload }),
   [PROJECT_LIST]: (state, action) => ({ ...state, ...action.payload }),
+  [GET_PROJECT]: (state, action) => ({ ...state, ...action.payload }),
   [ABOUT]: (state, action) => ({ ...state, ...action.payload }),
 }
 
